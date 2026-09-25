@@ -1,0 +1,27 @@
+# Workspace and editor caches
+.metadata/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Build products; preserve the existing linker and debugger inputs.
+**/Debug/*
+!**/Debug/bsp_linker_info.h
+!**/Debug/fsp_gen.ld
+!**/Debug/memory_regions.ld
+!**/Debug/*.rpd
+!**/Debug/*.sbd
+!**/Debug/gdbcmds.txt
+**/Release/
+/firmware/evaluations/mtkernel_test7_dualCoreIpc_Solution/build/*
+!/firmware/evaluations/mtkernel_test7_dualCoreIpc_Solution/build/*.sbd
+*.o
+*.d
+*.su
+*.elf
+*.elf.in
+*.srec
+*.map
+compile_commands.json
+*.log

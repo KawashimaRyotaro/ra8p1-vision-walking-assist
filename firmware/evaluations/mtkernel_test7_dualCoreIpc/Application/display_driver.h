@@ -1,0 +1,66 @@
+#ifndef DISPLAY_DRIVER_H
+#define DISPLAY_DRIVER_H
+
+#include <stdint.h>
+
+typedef enum
+{
+    DISPLAY_DRIVER_OK = 0,
+
+    DISPLAY_DRIVER_ERROR_OPEN,
+    DISPLAY_DRIVER_ERROR_START,
+    DISPLAY_DRIVER_ERROR_PANEL_CONTROL,
+    DISPLAY_DRIVER_ERROR_BACKLIGHT,
+    DISPLAY_DRIVER_ERROR_NOT_INITIALIZED,
+    DISPLAY_DRIVER_ERROR_ARGUMENT,
+    DISPLAY_DRIVER_ERROR_BUFFER_CHANGE
+
+} display_driver_status_t;
+
+display_driver_status_t display_driver_init(void);
+
+display_driver_status_t display_driver_fill(
+    uint32_t color
+);
+
+display_driver_status_t display_driver_backlight_on(void);
+
+/*
+ * Enlarge one 224x168 RGB565 debug image to 448x336 (2x per axis).
+ */
+display_driver_status_t display_driver_compose_debug_view_rgb565(
+    const uint8_t * source,
+    uint32_t source_width,
+    uint32_t source_height,
+    uint32_t source_stride_bytes
+);
+
+display_driver_status_t display_driver_overlay_rect_rgb565(
+    uint32_t source_width,
+    uint32_t source_height,
+    int32_t x1,
+    int32_t y1,
+    int32_t x2,
+    int32_t y2,
+    uint16_t color,
+    uint32_t thickness
+);
+
+display_driver_status_t display_driver_overlay_vector_rgb565(
+    uint32_t source_width,
+    uint32_t source_height,
+    int32_t source_x,
+    int32_t source_y,
+    int32_t source_dx,
+    int32_t source_dy,
+    uint16_t origin_color,
+    uint16_t line_color
+);
+
+display_driver_status_t display_driver_present_composed(void);
+
+/* Legacy compatibility. */
+uint8_t display_driver_release_pending(void);
+uint8_t display_driver_arm_release(uint32_t slot);
+
+#endif /* DISPLAY_DRIVER_H */
