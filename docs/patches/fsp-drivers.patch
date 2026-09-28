@@ -1,0 +1,223 @@
+diff --git a/FSP-6.5.1/ra/fsp/src/r_mipi_csi/r_mipi_csi.c b/firmware/evaluations/mtkernel_test7_dualCoreIpc/ra/fsp/src/r_mipi_csi/r_mipi_csi.c
+index 061b222..7499eea 100644
+--- a/FSP-6.5.1/ra/fsp/src/r_mipi_csi/r_mipi_csi.c
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/ra/fsp/src/r_mipi_csi/r_mipi_csi.c
+@@ -340,7 +340,11 @@ static void csi_call_callback (mipi_csi_instance_ctrl_t * p_ctrl, mipi_csi_callb
+  **********************************************************************************************************************/
+ static void csi_isr_enable (mipi_csi_irq_cfg_t const * irq_cfg, void * p_context)
+ {
+-    R_BSP_IrqCfgEnable(irq_cfg->irq, irq_cfg->ipl, p_context);
++    if ((FSP_INVALID_VECTOR != irq_cfg->irq) &&
++        (BSP_IRQ_DISABLED != irq_cfg->ipl))
++    {
++        R_BSP_IrqCfgEnable(irq_cfg->irq, irq_cfg->ipl, p_context);
++    }
+ }
+ 
+ /***********************************************************************************************************************
+@@ -350,8 +354,11 @@ static void csi_isr_enable (mipi_csi_irq_cfg_t const * irq_cfg, void * p_context
+  **********************************************************************************************************************/
+ static void csi_isr_disable (mipi_csi_irq_cfg_t const * irq_cfg)
+ {
+-    R_BSP_IrqDisable(irq_cfg->irq);
+-    R_FSP_IsrContextSet(irq_cfg->irq, NULL);
++    if (FSP_INVALID_VECTOR != irq_cfg->irq)
++    {
++        R_BSP_IrqDisable(irq_cfg->irq);
++        R_FSP_IsrContextSet(irq_cfg->irq, NULL);
++    }
+ }
+ 
+ /***********************************************************************************************************************
+diff --git a/FSP-6.5.1/ra/fsp/src/r_usb_basic/src/hw/r_usb_dma.c b/firmware/evaluations/mtkernel_test7_dualCoreIpc/ra/fsp/src/r_usb_basic/src/hw/r_usb_dma.c
+index d0e87eb..f8dfb45 100644
+--- a/FSP-6.5.1/ra/fsp/src/r_usb_basic/src/hw/r_usb_dma.c
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/ra/fsp/src/r_usb_basic/src/hw/r_usb_dma.c
+@@ -20,6 +20,87 @@
+ #define USB_DMA_DIR_RD                (0U)
+ #define USB_DMA_DIR_WR                (1U)
+ 
++#if BSP_CFG_DCACHE_ENABLED
++
++#define USB_DCACHE_LINE_SIZE_BYTES    (32U)
++
++static void usb_dcache_clean_range(void const * p_buffer, uint32_t size)
++{
++    if ((NULL == p_buffer) || (0U == size))
++    {
++        return;
++    }
++
++    uintptr_t const start =
++        ((uintptr_t) p_buffer) &
++        ~((uintptr_t) USB_DCACHE_LINE_SIZE_BYTES - 1U);
++
++    uintptr_t const end =
++        (((uintptr_t) p_buffer +
++          (uintptr_t) size +
++          USB_DCACHE_LINE_SIZE_BYTES - 1U)) &
++        ~((uintptr_t) USB_DCACHE_LINE_SIZE_BYTES - 1U);
++
++    SCB_CleanDCache_by_Addr(
++        (void *) start,
++        (int32_t) (end - start)
++    );
++}
++
++
++static void usb_dcache_clean_invalidate_range(
++    void const * p_buffer,
++    uint32_t size)
++{
++    if ((NULL == p_buffer) || (0U == size))
++    {
++        return;
++    }
++
++    uintptr_t const start =
++        ((uintptr_t) p_buffer) &
++        ~((uintptr_t) USB_DCACHE_LINE_SIZE_BYTES - 1U);
++
++    uintptr_t const end =
++        (((uintptr_t) p_buffer +
++          (uintptr_t) size +
++          USB_DCACHE_LINE_SIZE_BYTES - 1U)) &
++        ~((uintptr_t) USB_DCACHE_LINE_SIZE_BYTES - 1U);
++
++    SCB_CleanInvalidateDCache_by_Addr(
++        (void *) start,
++        (int32_t) (end - start)
++    );
++}
++
++
++static void usb_dcache_invalidate_range(
++    void const * p_buffer,
++    uint32_t size)
++{
++    if ((NULL == p_buffer) || (0U == size))
++    {
++        return;
++    }
++
++    uintptr_t const start =
++        ((uintptr_t) p_buffer) &
++        ~((uintptr_t) USB_DCACHE_LINE_SIZE_BYTES - 1U);
++
++    uintptr_t const end =
++        (((uintptr_t) p_buffer +
++          (uintptr_t) size +
++          USB_DCACHE_LINE_SIZE_BYTES - 1U)) &
++        ~((uintptr_t) USB_DCACHE_LINE_SIZE_BYTES - 1U);
++
++    SCB_InvalidateDCache_by_Addr(
++        (void *) start,
++        (int32_t) (end - start)
++    );
++}
++
++#endif
++
+ #if (USB_CFG_DMA == USB_CFG_ENABLE || USB_CFG_DTC == USB_CFG_ENABLE)
+ 
+  #if (USB_CFG_DMA == USB_CFG_ENABLE)
+@@ -335,6 +416,30 @@ void usb_cstd_dfifo_end (usb_utr_t * ptr, uint16_t useport)
+     channel = usb_cstd_dma_ref_ch_no(ptr, useport);
+     pipe    = g_usb_cstd_dma_pipe[ip][channel];
+ 
++    #if BSP_CFG_DCACHE_ENABLED
++        if (USB_D0USE == useport)
++        {
++            if (USB_MODE_HOST == g_usb_usbmode[ptr->ip])
++            {
++    #if ((USB_CFG_MODE & USB_CFG_HOST) == USB_CFG_HOST)
++                usb_dcache_invalidate_range(
++                    gp_usb_hstd_data_ptr[ptr->ip][pipe],
++                    g_usb_cstd_dma_size[ip][channel]
++                );
++    #endif
++            }
++            else
++            {
++    #if ((USB_CFG_MODE & USB_CFG_PERI) == USB_CFG_PERI)
++                usb_dcache_invalidate_range(
++                    gp_usb_pstd_data[pipe],
++                    g_usb_cstd_dma_size[ip][channel]
++                );
++    #endif
++            }
++        }
++    #endif
++
+     if (g_usb_usbmode[ptr->ip] == USB_MODE_PERI)
+     {
+  #if ((USB_CFG_MODE & USB_CFG_PERI) == USB_CFG_PERI)
+@@ -1148,10 +1253,21 @@ void usb_cstd_dma_rcv_setting (usb_utr_t * ptr, uint32_t des_addr, uint16_t usep
+         p_transfer_info->p_dest     = (void *) des_addr;
+         p_transfer_info->length     = block_size;
+         p_transfer_info->num_blocks =
+-            (uint16_t) (((transfer_size - 1) / g_usb_cstd_dma_fifo[ip][dma_ch]) + 1);
++            (uint16_t) (((transfer_size - 1) /
++                        g_usb_cstd_dma_fifo[ip][dma_ch]) + 1);
++
++        #if BSP_CFG_DCACHE_ENABLED
++                usb_dcache_clean_invalidate_range(
++                    (void *) (uintptr_t) des_addr,
++                    transfer_size
++                );
++        #endif
+ 
+         /* Call R_DMAC_Reconfigure(). */
+-        p_transfer_rx->p_api->reconfigure(p_transfer_rx->p_ctrl, p_transfer_info);
++        p_transfer_rx->p_api->reconfigure(
++            p_transfer_rx->p_ctrl,
++            p_transfer_info
++        );
+     }                                  /* if (USB_NULL != ptr) */
+ }
+ 
+@@ -1214,6 +1330,13 @@ void usb_cstd_dma_send_setting (usb_utr_t * ptr, uint32_t src_adr, uint16_t usep
+ /* DMA test code start */
+         /* Operation - No Extended Repeat Area Function and No Offset Subtraction */
+ 
++        #if BSP_CFG_DCACHE_ENABLED
++                usb_dcache_clean_range(
++                    (void *) (uintptr_t) src_adr,
++                    transfer_size
++                );
++        #endif
++
+         /* Source address is fixed
+          * Transfer data size is 32-bit (long word).
+          * DMAC transfer mode is Repeat mode & Source side is repeat area
+diff --git a/FSP-6.5.1/ra/fsp/src/r_vin/r_vin.c b/firmware/evaluations/mtkernel_test7_dualCoreIpc/ra/fsp/src/r_vin/r_vin.c
+index d55c95e..1b087c4 100644
+--- a/FSP-6.5.1/ra/fsp/src/r_vin/r_vin.c
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/ra/fsp/src/r_vin/r_vin.c
+@@ -342,16 +342,20 @@ static fsp_err_t vin_stop (vin_instance_ctrl_t * const p_ctrl)
+  **********************************************************************************************************************/
+ static void vin_isr_enable (vin_irq_cfg_t const * irq_cfg, void * p_context)
+ {
+-    R_BSP_IrqCfgEnable(irq_cfg->irq, irq_cfg->ipl, p_context);
++    if ((FSP_INVALID_VECTOR != irq_cfg->irq) &&
++        (BSP_IRQ_DISABLED != irq_cfg->ipl))
++    {
++        R_BSP_IrqCfgEnable(irq_cfg->irq, irq_cfg->ipl, p_context);
++    }
+ }
+ 
+-/***********************************************************************************************************************
+- * Disable the specified ISR
+- **********************************************************************************************************************/
+ static void vin_isr_disable (vin_irq_cfg_t const * irq_cfg)
+ {
+-    R_BSP_IrqDisable(irq_cfg->irq);
+-    R_FSP_IsrContextSet(irq_cfg->irq, NULL);
++    if (FSP_INVALID_VECTOR != irq_cfg->irq)
++    {
++        R_BSP_IrqDisable(irq_cfg->irq);
++        R_FSP_IsrContextSet(irq_cfg->irq, NULL);
++    }
+ }
+ 
+ /***********************************************************************************************************************

@@ -1,0 +1,250 @@
+diff --git a/imported-baseline/mtk3_bsp2/include/sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc/mtk3_bsp2/include/sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h
+index 19b1039..b2e83b3 100644
+--- a/imported-baseline/mtk3_bsp2/include/sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/mtk3_bsp2/include/sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h
+@@ -33,7 +33,7 @@
+ 
+ /* RA8M1 Internal SRAM   0x22000000 - 0x221D3FFF  (Size 1872KB)     */
+ #define INTERNAL_RAM_START      0x22000000
+-#define INTERNAL_RAM_SIZE       0x001D4000
++#define INTERNAL_RAM_SIZE       0x000EA000
+ 
+ #define INTERNAL_RAM_END        (INTERNAL_RAM_START+INTERNAL_RAM_SIZE)
+ 
+diff --git a/imported-baseline/mtk3_bsp2/mtkernel/include/sys/inittask.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc/mtk3_bsp2/mtkernel/include/sys/inittask.h
+index 24e4ece..fd5b200 100644
+--- a/imported-baseline/mtk3_bsp2/mtkernel/include/sys/inittask.h
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/mtk3_bsp2/mtkernel/include/sys/inittask.h
+@@ -24,7 +24,7 @@
+  */
+ #define INITTASK_EXINF		(0x0)
+ #define INITTASK_ITSKPRI	(1)
+-#define INITTASK_STKSZ		(1*1024)
++#define INITTASK_STKSZ             (1*1024)
+ #define INITTASK_DSNAME		"inittsk"
+ 
+ #if USE_IMALLOC
+diff --git a/imported-baseline/mtk3_bsp2/sysdepend/ra_fsp/devinit.c b/firmware/evaluations/mtkernel_test7_dualCoreIpc/mtk3_bsp2/sysdepend/ra_fsp/devinit.c
+index 7191444..f7bee94 100644
+--- a/imported-baseline/mtk3_bsp2/sysdepend/ra_fsp/devinit.c
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/mtk3_bsp2/sysdepend/ra_fsp/devinit.c
+@@ -43,7 +43,7 @@ EXPORT ER knl_start_device( void )
+ 	ER	err	= E_OK;
+ 
+ #if DEVCNF_USE_HAL_IIC
+-	err = dev_init_hal_i2c(0, &g_i2c_master0_ctrl, &g_i2c_master0_cfg);
++	err = dev_init_hal_i2c(0, &g_i2c_master_for_peripheral_ctrl, &g_i2c_master_for_peripheral_cfg);
+ 	if(err < E_OK) return err;
+ #endif
+ 
+diff --git a/imported-baseline/mtk3_bsp2/config/config_bsp/ra_fsp/config_bsp.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/config/config_bsp/ra_fsp/config_bsp.h
+index 3de7ea8..fd31e6c 100644
+--- a/imported-baseline/mtk3_bsp2/config/config_bsp/ra_fsp/config_bsp.h
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/config/config_bsp/ra_fsp/config_bsp.h
+@@ -43,10 +43,10 @@
+ /* Device usage settings
+  *	1: Use   0: Do not use
+  */
+-#define DEVCNF_USE_HAL_IIC		1	// I2C communication device (Use IIC )
++#define DEVCNF_USE_HAL_IIC		0	// I2C communication device (Use IIC )
+ #define DEVCNF_USE_HAL_SCI_IIC		0	// I2C communication device (Use SCI )
+ #define DEVCNF_USE_HAL_I3C_IIC		0	// I2C communication device (Use I3C )
+ #define DEVCNF_USE_HAL_ADC		0	// A/D conversion device (Use ADC12)
+-#define DEVCNF_USE_HAL_ADHB		1	// A/D conversion device (Use ADC16H)
++#define DEVCNF_USE_HAL_ADHB		0	// A/D conversion device (Use ADC16H)
+ 
+ #endif	/* _MTKBSP_BSP_CONFIG_DEVENV_H_ */
+diff --git a/imported-baseline/mtk3_bsp2/include/sys/machine.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/machine.h
+index bb62880..2423ea4 100644
+--- a/imported-baseline/mtk3_bsp2/include/sys/machine.h
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/machine.h
+@@ -63,6 +63,9 @@
+ #elif defined(_RAFSP_EK_RA8P1_)
+ #include <sys/sysdepend/ra_fsp/ek_ra8p1/machine.h>
+ 
++#elif defined(_RAFSP_EK_RA8P1_CPU1_)
++#include <sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/machine.h>
++
+ #elif defined(_RAFSP_EK_RA8M1_)
+ #include <sys/sysdepend/ra_fsp/ek_ra8m1/machine.h>
+ 
+diff --git a/imported-baseline/mtk3_bsp2/include/sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h
+index 19b1039..7811e15 100644
+--- a/imported-baseline/mtk3_bsp2/include/sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h
+@@ -32,8 +32,8 @@
+  */
+ 
+ /* RA8M1 Internal SRAM   0x22000000 - 0x221D3FFF  (Size 1872KB)     */
+-#define INTERNAL_RAM_START      0x22000000
+-#define INTERNAL_RAM_SIZE       0x001D4000
++#define INTERNAL_RAM_START      0x220EA000
++#define INTERNAL_RAM_SIZE       0x000EA000
+ 
+ #define INTERNAL_RAM_END        (INTERNAL_RAM_START+INTERNAL_RAM_SIZE)
+ 
+diff --git a/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/machine.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/machine.h
+new file mode 100644
+index 0000000..87698ce
+--- /dev/null
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/machine.h
+@@ -0,0 +1,51 @@
++/*
++ *----------------------------------------------------------------------
++ *    micro T-Kernel 3.0 BSP 2.0
++ *
++ *    Copyright (C) 2023-2026 by Ken Sakamura.
++ *    This software is distributed under the T-License 2.2.
++ *----------------------------------------------------------------------
++ *
++ *    Released by TRON Forum(http://www.tron.org) at 2026/04.
++ *
++ *----------------------------------------------------------------------
++ */
++
++/*
++ *	machine.h
++ *
++ *	Machine type definition (EK-RA8P1)
++ */
++
++#ifndef _MTKBSP_SYS_SYSDEPEND_MACHINE_H_
++#define _MTKBSP_SYS_SYSDEPEND_MACHINE_H_
++
++/*
++ * [TYPE]_[CPU]		TARGET SYSTEM
++ * CPU_xxxx		CPU type
++ * CPU_CORE_xxx		CPU core type
++ */
++
++/* ----- EK-RA8P1 (CPU: R7KA8P1KFLCAC) definition ----- */
++#define MTKBSP_RAFSP			1	/* Target system   : RA FSP */
++#define MTKBSP_EK_RA8P1			1	/* Target Board    : EK-RA8P1 */
++
++#define MTKBSP_CPU_RA			1	/* Target CPU type : RA group */
++#define MTKBSP_CPU_RA8			1	/* Target CPU type : RA8 series */
++#define MTKBSP_CPU_RA8P1		1	/* Target CPU      : RA8P1 */
++
++#define MTKBSP_CPU_CORE_ARMV8M      1
++#define MTKBSP_CPU_CORE_ACM33       1
++
++#define KNL_SYSDEP_PATH sysdepend/ra_fsp
++
++#define TARGET_DIR      ra_fsp/ek_ra8p1_cpu1
++#define TARGET_GRP_DIR  ra_fsp
++#define TARGET_CPU_DIR  ra8p1
++
++/*
++ **** CPU Core depeneded profile (ARMv8M)
++ */
++#include <sys/sysdepend/ra_fsp/cpu/core/armv8m/machine.h>
++
++#endif /* _MTKBSP_SYS_SYSDEPEND_MACHINE_H_ */
+diff --git a/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/profile.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/profile.h
+new file mode 100644
+index 0000000..adc2559
+--- /dev/null
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/profile.h
+@@ -0,0 +1,53 @@
++/*
++ *----------------------------------------------------------------------
++ *    micro T-Kernel 3.0 BSP 2.0
++ *
++ *    Copyright (C) 2023-2026 by Ken Sakamura.
++ *    This software is distributed under the T-License 2.2.
++ *----------------------------------------------------------------------
++ *
++ *    Released by TRON Forum(http://www.tron.org) at 2026/04.
++ *
++ *----------------------------------------------------------------------
++ */
++
++/*
++ *	profile.h
++ *
++ *	Service Profile (EK-RA8P1)
++ */
++
++#ifndef _MTKBSP_SYS_DEPEND_PROFILE_H_
++#define _MTKBSP_SYS_DEPEND_PROFILE_H_
++
++/*
++ **** CPU Core depeneded profile (ARMv8M)
++ */
++#include <sys/sysdepend/ra_fsp/cpu/core/armv8m/profile.h>
++
++/*
++ **** Target-depeneded profile (RA FSP EK-RA8P1)
++ */
++
++/*
++ * Power management
++ */
++#define TK_SUPPORT_LOWPOWER	FALSE		/* Support of power management */
++
++/*
++ * Device Support
++ */
++#define TK_SUPPORT_IOPORT	TRUE		/* Support of I/O port access */
++
++/*
++ * Physical timer
++ */
++#if USE_PTMR
++#define TK_SUPPORT_PTIMER	FALSE		/* Support of physical timer */
++#define TK_MAX_PTIMER		0		/* Maximum number of physical timers. */
++#else
++#define TK_SUPPORT_PTIMER	FALSE		/* Support of physical timer */
++#define TK_MAX_PTIMER		0		/* Maximum number of physical timers. */
++#endif
++
++#endif /* _MTKBSP_SYS_DEPEND_PROFILE_H_ */
+diff --git a/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/sysdef.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/sysdef.h
+new file mode 100644
+index 0000000..ccbbbe3
+--- /dev/null
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/sys/sysdepend/ra_fsp/ek_ra8p1_cpu1/sysdef.h
+@@ -0,0 +1,43 @@
++/*
++ *----------------------------------------------------------------------
++ *    micro T-Kernel 3.0 BSP 2.0
++ *
++ *    Copyright (C) 2023-2026 by Ken Sakamura.
++ *    This software is distributed under the T-License 2.2.
++ *----------------------------------------------------------------------
++ *
++ *    Released by TRON Forum(http://www.tron.org) at 2026/04.
++ *
++ *----------------------------------------------------------------------
++ */
++
++/*
++ *	sysdef.h
++ *
++ *	System dependencies definition (EK-RA8P1)
++ *	Included also from assembler program.
++ */
++
++#ifndef _MTKBSP_SYS_SYSDEF_DEPEND_H_
++#define _MTKBSP_SYS_SYSDEF_DEPEND_H_
++
++/* CPU-dependent definition */
++#include <sys/sysdepend/ra_fsp/cpu/ra8p1/sysdef.h>
++
++
++/* ------------------------------------------------------------------------ */
++/* Clock frequency
++ */
++#define CPUCLK_MHz	(250)
++#define ICLK_MHz	(250)
++#define PCLKA_MHz	(125)
++#define PCLKB_MHz	(62)
++#define PCLKC_MHz	(125)
++#define PCLKD_MHz	(250)
++#define PCLKE_MHz	(250)
++
++#define	SYSCLK		(CPUCLK_MHz*1000*1000)	// System clock (Hz)
++#define TMCLK_KHz	(CPUCLK_MHz*1000)	// System timer clock input (kHz)
++#define TMCLK		(CPUCLK_MHz)		// System timer clock input (MHz)
++
++#endif /* _MTKBSP_TK_SYSDEF_DEPEND_H_ */

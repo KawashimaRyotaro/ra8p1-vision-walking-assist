@@ -1,0 +1,29 @@
+USB evaluation video attribution
+
+Applies to the video content in VID000.Y56 through VID013.Y56.
+
+Original work:
+Walking in City Centre of Tehran - Valiasr Crossroads to College Bridge
+
+Creator / attribution:
+Glimpse of Tehran
+
+Source (Wikimedia Commons):
+https://commons.wikimedia.org/wiki/File:Walking_in_City_Centre_of_Tehran_-_Valiasr_Crossroads_to_College_Bridge.webm
+
+Original publication:
+https://www.youtube.com/watch?v=SdhctFjUE4k
+
+License identified on the Wikimedia Commons source page:
+Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+https://creativecommons.org/licenses/by/3.0/
+
+Modifications for this project:
+Converted to 10 frames per second, divided into 30-second segments
+(the final segment contains the remaining frames), resized to 224 x 168
+pixels, and converted to headerless RGB565 frame data (.Y56).
+No audio is included.
+
+This use does not imply endorsement by the original creator.
+This notice concerns the video content, not the firmware or SELECT.TXT.
+Keep this attribution and the license link with redistributed video files.

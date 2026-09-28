@@ -1,0 +1,640 @@
+diff --git a/RUHMI-model-zoo/vision/object_detection/yolox_tiny/embedded_c/preprocessing.c b/firmware/evaluations/mtkernel_test7_dualCoreIpc/Application/yolox_tiny/preprocessing.c
+index e2b792b..36be9fe 100644
+--- a/RUHMI-model-zoo/vision/object_detection/yolox_tiny/embedded_c/preprocessing.c
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/Application/yolox_tiny/preprocessing.c
+@@ -198,3 +198,464 @@ void preprocess(const uint8_t   *source_image,
+         }
+     }
+ }
++
++
++/*
++ * Expand one RGB565 channel to 8-bit.
++ *
++ * channel:
++ *   0 = R
++ *   1 = G
++ *   2 = B
++ */
++static float rgb565_channel(const uint16_t *source,
++                            int32_t width,
++                            int32_t height,
++                            int32_t x,
++                            int32_t y,
++                            int32_t channel)
++{
++    if (x < 0)
++    {
++        x = 0;
++    }
++
++    if (y < 0)
++    {
++        y = 0;
++    }
++
++    if (x >= width)
++    {
++        x = width - 1;
++    }
++
++    if (y >= height)
++    {
++        y = height - 1;
++    }
++
++    uint16_t const pixel =
++        source[(y * width) + x];
++
++    uint32_t value;
++
++    if (0 == channel)
++    {
++        uint32_t const r5 =
++            ((uint32_t) pixel >> 11U) & 0x1FU;
++
++        value = (r5 << 3U) | (r5 >> 2U);
++    }
++    else if (1 == channel)
++    {
++        uint32_t const g6 =
++            ((uint32_t) pixel >> 5U) & 0x3FU;
++
++        value = (g6 << 2U) | (g6 >> 4U);
++    }
++    else
++    {
++        uint32_t const b5 =
++            (uint32_t) pixel & 0x1FU;
++
++        value = (b5 << 3U) | (b5 >> 2U);
++    }
++
++    return (float) value;
++}
++
++
++static float bilinear_sample_rgb565(const uint16_t *source,
++                                    int32_t width,
++                                    int32_t height,
++                                    int32_t channel,
++                                    float x,
++                                    float y)
++{
++    int32_t x0 = (int32_t) x;
++    int32_t y0 = (int32_t) y;
++
++    int32_t x1 = x0 + 1;
++    int32_t y1 = y0 + 1;
++
++    float const wx = x - (float) x0;
++    float const wy = y - (float) y0;
++
++    float const v00 =
++        rgb565_channel(source, width, height,
++                       x0, y0, channel);
++
++    float const v10 =
++        rgb565_channel(source, width, height,
++                       x1, y0, channel);
++
++    float const v01 =
++        rgb565_channel(source, width, height,
++                       x0, y1, channel);
++
++    float const v11 =
++        rgb565_channel(source, width, height,
++                       x1, y1, channel);
++
++    float const top =
++        v00 * (1.0F - wx) +
++        v10 * wx;
++
++    float const bottom =
++        v01 * (1.0F - wx) +
++        v11 * wx;
++
++    return top * (1.0F - wy) +
++           bottom * wy;
++}
++
++
++void preprocess_rgb565(const uint16_t *source_image,
++                       uint16_t source_width,
++                       uint16_t source_height,
++                       int8_t *p_destination_image,
++                       uint16_t destination_width,
++                       uint16_t destination_height,
++                       letterbox_params_t *p_params)
++{
++    if ((NULL == source_image) ||
++        (NULL == p_destination_image))
++    {
++        return;
++    }
++
++    int32_t const src_w =
++        (int32_t) source_width;
++
++    int32_t const src_h =
++        (int32_t) source_height;
++
++    int32_t const dst_w =
++        (int32_t) destination_width;
++
++    int32_t const dst_h =
++        (int32_t) destination_height;
++
++
++    /*
++     * Letterbox geometry.
++     */
++    float const scale_x =
++        (float) dst_w / (float) src_w;
++
++    float const scale_y =
++        (float) dst_h / (float) src_h;
++
++    float const scale =
++        (scale_x < scale_y)
++        ? scale_x
++        : scale_y;
++
++
++    int32_t const resized_w =
++        (int32_t) ((float) src_w * scale);
++
++    int32_t const resized_h =
++        (int32_t) ((float) src_h * scale);
++
++    int32_t const pad_x =
++        (dst_w - resized_w) / 2;
++
++    int32_t const pad_y =
++        (dst_h - resized_h) / 2;
++
++
++    if (NULL != p_params)
++    {
++        p_params->scale = scale;
++        p_params->pad_x = pad_x;
++        p_params->pad_y = pad_y;
++    }
++
++
++    /*
++     * YOLOX letterbox value = 114.
++     * Quantized with zero-point -128:
++     * 114 - 128 = -14.
++     */
++    int8_t const pad_value =
++        quantize_to_int8(
++            (float) INPUT_LETTERBOX_PAD
++        );
++
++    memset(
++        p_destination_image,
++        (int) pad_value,
++        (size_t)
++        (dst_w *
++         dst_h *
++         MODEL_INPUT_C)
++    );
++
++
++    float const inv_scale_x =
++        (float) src_w /
++        (float) resized_w;
++
++    float const inv_scale_y =
++        (float) src_h /
++        (float) resized_h;
++
++
++    for (int32_t dy = 0;
++         dy < resized_h;
++         dy++)
++    {
++        float const src_y =
++            ((float) dy + 0.5F) *
++            inv_scale_y -
++            0.5F;
++
++        int32_t const out_y =
++            dy + pad_y;
++
++
++        for (int32_t dx = 0;
++             dx < resized_w;
++             dx++)
++        {
++            float const src_x =
++                ((float) dx + 0.5F) *
++                inv_scale_x -
++                0.5F;
++
++            int32_t const out_x =
++                dx + pad_x;
++
++            int32_t const out_index =
++                (out_y * dst_w + out_x) *
++                MODEL_INPUT_C;
++
++
++            /*
++             * RGB565 source:
++             *   R = channel 0
++             *   G = channel 1
++             *   B = channel 2
++             *
++             * Keep the same effective ordering as the
++             * existing preprocess():
++             *
++             * destination = B, G, R
++             */
++            float const red =
++                bilinear_sample_rgb565(
++                    source_image,
++                    src_w,
++                    src_h,
++                    0,
++                    src_x,
++                    src_y
++                );
++
++            float const green =
++                bilinear_sample_rgb565(
++                    source_image,
++                    src_w,
++                    src_h,
++                    1,
++                    src_x,
++                    src_y
++                );
++
++            float const blue =
++                bilinear_sample_rgb565(
++                    source_image,
++                    src_w,
++                    src_h,
++                    2,
++                    src_x,
++                    src_y
++                );
++
++
++            p_destination_image[out_index + 0] =
++                quantize_to_int8(blue);
++
++            p_destination_image[out_index + 1] =
++                quantize_to_int8(green);
++
++            p_destination_image[out_index + 2] =
++                quantize_to_int8(red);
++        }
++    }
++}
++
++
++void preprocess_rgb565_strided(
++    const uint16_t * source_image,
++    uint16_t         source_width,
++    uint16_t         source_height,
++    uint32_t         source_stride_bytes,
++    int8_t         * p_destination_image,
++    uint16_t         destination_width,
++    uint16_t         destination_height,
++    letterbox_params_t * p_params)
++{
++    if ((NULL == source_image) ||
++        (NULL == p_destination_image))
++    {
++        return;
++    }
++
++    /*
++     * This fast path is specifically for the final Camera Frame Contract:
++     *
++     * source      : 224 x 168 RGB565
++     * source row  : 2048-byte stride
++     * destination : 224 x 224 x 3 INT8
++     *
++     * No resize is necessary.
++     */
++    if ((224U != source_width) ||
++        (168U != source_height) ||
++        (224U != destination_width) ||
++        (224U != destination_height))
++    {
++        return;
++    }
++
++
++    /*
++     * 224x168 fits horizontally without scaling.
++     *
++     * 224 - 168 = 56
++     * top padding    = 28
++     * bottom padding = 28
++     */
++    if (NULL != p_params)
++    {
++        p_params->scale = 1.0F;
++        p_params->pad_x = 0;
++        p_params->pad_y = 28;
++    }
++
++
++    /*
++     * Model letterbox pad:
++     *
++     * uint8 114
++     *   -> INT8 114 - 128
++     *   -> -14
++     */
++    memset(
++        p_destination_image,
++        (int) ((int8_t) -14),
++        (size_t) destination_width *
++        (size_t) destination_height *
++        3U
++    );
++
++
++    for (uint32_t y = 0U;
++         y < source_height;
++         y++)
++    {
++        /*
++         * Frame Cache rows are not tightly packed.
++         *
++         * row 0 : source + 0
++         * row 1 : source + 2048 bytes
++         * ...
++         */
++        const uint8_t * const source_row_bytes =
++            ((const uint8_t *) source_image) +
++            (y * source_stride_bytes);
++
++        const uint16_t * const source_row =
++            (const uint16_t *) source_row_bytes;
++
++
++        uint32_t const destination_y =
++            y + 28U;
++
++        int8_t * const destination_row =
++            p_destination_image +
++            ((destination_y *
++              destination_width) *
++             3U);
++
++
++        for (uint32_t x = 0U;
++             x < source_width;
++             x++)
++        {
++            uint16_t const rgb565 =
++                source_row[x];
++
++
++            /*
++             * RGB565:
++             *
++             * RRRRR GGGGGG BBBBB
++             */
++            uint8_t const red5 =
++                (uint8_t)
++                ((rgb565 >> 11U) & 0x1FU);
++
++            uint8_t const green6 =
++                (uint8_t)
++                ((rgb565 >> 5U) & 0x3FU);
++
++            uint8_t const blue5 =
++                (uint8_t)
++                (rgb565 & 0x1FU);
++
++
++            /*
++             * Expand exactly to 8-bit range.
++             */
++            uint8_t const red8 =
++                (uint8_t)
++                ((red5 << 3U) |
++                 (red5 >> 2U));
++
++            uint8_t const green8 =
++                (uint8_t)
++                ((green6 << 2U) |
++                 (green6 >> 4U));
++
++            uint8_t const blue8 =
++                (uint8_t)
++                ((blue5 << 3U) |
++                 (blue5 >> 2U));
++
++
++            uint32_t const destination_index =
++                x * 3U;
++
++            /*
++             * Keep the same channel order as the currently
++             * validated YOLOX RGB565 preprocessing path:
++             *
++             * B, G, R
++             *
++             * Quantization:
++             * int8 = uint8 - 128
++             */
++            destination_row[
++                destination_index + 0U
++            ] =
++                (int8_t)
++                ((int32_t) blue8 - 128);
++
++            destination_row[
++                destination_index + 1U
++            ] =
++                (int8_t)
++                ((int32_t) green8 - 128);
++
++            destination_row[
++                destination_index + 2U
++            ] =
++                (int8_t)
++                ((int32_t) red8 - 128);
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/RUHMI-model-zoo/vision/object_detection/yolox_tiny/embedded_c/preprocessing.h b/firmware/evaluations/mtkernel_test7_dualCoreIpc/Application/yolox_tiny/preprocessing.h
+index a2be6a8..50c8ea6 100644
+--- a/RUHMI-model-zoo/vision/object_detection/yolox_tiny/embedded_c/preprocessing.h
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/Application/yolox_tiny/preprocessing.h
+@@ -57,4 +57,23 @@ void preprocess(const uint8_t   *source_image,
+                 uint16_t         destination_height,
+                 letterbox_params_t *p_params);
+ 
++void preprocess_rgb565(const uint16_t *source_image,
++                       uint16_t        source_width,
++                       uint16_t        source_height,
++                       int8_t         *p_destination_image,
++                       uint16_t        destination_width,
++                       uint16_t        destination_height,
++                       letterbox_params_t *p_params);
++
++void preprocess_rgb565_strided(
++    const uint16_t * source_image,
++    uint16_t         source_width,
++    uint16_t         source_height,
++    uint32_t         source_stride_bytes,
++    int8_t         * p_destination_image,
++    uint16_t         destination_width,
++    uint16_t         destination_height,
++    letterbox_params_t * p_params
++);
++
+ #endif /* PREPROCESSING_H */
+diff --git a/RUHMI-model-zoo/vision/object_detection/yolox_tiny/embedded_c/src_mcu_npu/kernel_library_int.c b/firmware/evaluations/mtkernel_test7_dualCoreIpc/Application/yolox_tiny/src_mcu_npu/kernel_library_int.c
+index f85dbb5..9074210 100644
+--- a/RUHMI-model-zoo/vision/object_detection/yolox_tiny/embedded_c/src_mcu_npu/kernel_library_int.c
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/Application/yolox_tiny/src_mcu_npu/kernel_library_int.c
+@@ -532,12 +532,9 @@ void StridedSlice(const int8_t* input, int8_t* output, const int32_t* begin_orig
+   const int start_4 = StridedSliceStartForAxis(&params_copy, input_shape, 4);
+   const int stop_4 = StridedSliceEndForAxis(&params_copy, input_shape, 4, start_4);
+ 
+-  // With a static_cast it is not possible to initialize
+-  // a variable of type 'const int *'
+-  // with an rvalue of type 'const int32_t *' (aka 'const long *').
+-  // reinterpret_cast is required to handle this casting.
+-  const int* shape = input_shape;
+-  const int* stride = params_copy.strides;
++  // Match the int32_t array element types without pointer casts.
++  const int32_t* shape = input_shape;
++  const int32_t* stride = params_copy.strides;
+   const bool inner_stride_is_1 = params_copy.strides[4] == 1;
+   int output_ptr=0;
+ 
+diff --git a/RUHMI-model-zoo/vision/object_detection/yolox_tiny/embedded_c/src_mcu_npu/sub_0002_invoke.c b/firmware/evaluations/mtkernel_test7_dualCoreIpc/Application/yolox_tiny/src_mcu_npu/sub_0002_invoke.c
+index b5b4eb8..1869717 100644
+--- a/RUHMI-model-zoo/vision/object_detection/yolox_tiny/embedded_c/src_mcu_npu/sub_0002_invoke.c
++++ b/firmware/evaluations/mtkernel_test7_dualCoreIpc/Application/yolox_tiny/src_mcu_npu/sub_0002_invoke.c
+@@ -3,6 +3,9 @@
+ #include <stddef.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <limits.h>
++#include <tk/tkernel.h>
++
+ #include "common_data.h"
+ 
+ #include "sub_0002_tensors.h"
+@@ -15,12 +18,44 @@
+ #include "ethosu_driver.h"
+ 
+ // Define arenas with allocation and 16-byte alignment
+-__attribute__((aligned(16))) uint8_t sub_0002_arena[802816];
++__attribute__((section(".sdram"), aligned(16))) uint8_t sub_0002_arena[802816];
+ // Fast scratch arena not used for Ethos-U55
+ //  We will not create it for now and reuse the address of the other arena
+ // __attribute__((aligned(16))) static uint8_t sub_0002_fast_scratch[802816];
+ uint8_t* sub_0002_fast_scratch = sub_0002_arena;
+ 
++volatile uint32_t g_ethosu_invoke_count    = 0U;
++volatile uint32_t g_ethosu_invoke_last_ms  = 0U;
++volatile uint32_t g_ethosu_invoke_total_ms = 0U;
++volatile uint32_t g_ethosu_invoke_min_ms   = UINT32_MAX;
++volatile uint32_t g_ethosu_invoke_max_ms   = 0U;
++
++volatile int g_ethosu_invoke_last_result = 0;
++
++
++static uint8_t sub_0002_get_time_ms(uint64_t * time_ms)
++{
++    if (NULL == time_ms)
++    {
++        return 0U;
++    }
++
++    SYSTIM system_time;
++
++    ER err = tk_get_otm(&system_time);
++
++    if (err < E_OK)
++    {
++        return 0U;
++    }
++
++    *time_ms =
++        ((uint64_t) (uint32_t) system_time.hi << 32) |
++        (uint64_t) system_time.lo;
++
++    return 1U;
++}
++
+ int sub_0002_invoke(bool clean_outputs) {
+   // Initialize base addresses and sizes
+   uint64_t base_addrs[8] = {0};
+@@ -74,7 +109,60 @@ int sub_0002_invoke(bool clean_outputs) {
+   if (num_base_addrs > 8) {
+     num_base_addrs = 8;
+   }
+-  int result = ethosu_invoke_v3(&g_ethosu0, cms_data, cms_size, base_addrs, base_addrs_size, num_base_addrs, NULL);
++  
++  uint64_t invoke_start_ms = 0U;
++  uint64_t invoke_end_ms   = 0U;
++
++  uint8_t const timing_valid =
++      sub_0002_get_time_ms(&invoke_start_ms);
++
++
++  int result = ethosu_invoke_v3(
++      &g_ethosu0,
++      cms_data,
++      cms_size,
++      base_addrs,
++      base_addrs_size,
++      num_base_addrs,
++      NULL
++  );
++
++
++  g_ethosu_invoke_last_result = result;
++
++
++  if ((0U != timing_valid) &&
++      (0U != sub_0002_get_time_ms(&invoke_end_ms)))
++  {
++      uint32_t const elapsed_ms =
++          (uint32_t)
++          (
++              invoke_end_ms -
++              invoke_start_ms
++          );
++
++      g_ethosu_invoke_last_ms =
++          elapsed_ms;
++
++      g_ethosu_invoke_total_ms +=
++          elapsed_ms;
++
++      g_ethosu_invoke_count++;
++
++      if (elapsed_ms <
++          g_ethosu_invoke_min_ms)
++      {
++          g_ethosu_invoke_min_ms =
++              elapsed_ms;
++      }
++
++      if (elapsed_ms >
++          g_ethosu_invoke_max_ms)
++      {
++          g_ethosu_invoke_max_ms =
++              elapsed_ms;
++      }
++  }
+ 
+   if (result == -1) {
+     // Ethos-U invocation failed

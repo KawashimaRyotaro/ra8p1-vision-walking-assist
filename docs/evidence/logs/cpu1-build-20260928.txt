@@ -1,0 +1,719 @@
+Extracting support files...
+19:00:22 **** プロジェクト mtkernel_test7_dualCoreIpc_CPU1 に対する構成 Debug の クリーンのみのビルド ****
+make -r -j22 clean 
+make: *** No rule to make target 'clean'.  Stop.
+"make -r -j22 clean" terminated with exit code 2. Build might be incomplete.
+
+19:00:23 Build Failed. 1 errors, 0 warnings. (took 307ms)
+
+Extracting support files...
+19:00:26 **** プロジェクト mtkernel_test7_dualCoreIpc_CPU1 に対する構成 Debug の ビルド ****
+make -r -j22 all 
+Building file: ../src/hal_warmstart.c
+Building file: ../src/hal_entry.c
+Building file: ../ra_gen/common_data.c
+Building file: ../ra_gen/hal_data.c
+Building file: ../ra_gen/main.c
+Building file: ../ra_gen/pin_data.c
+Building file: ../ra_gen/vector_data.c
+Building file: ../ra/fsp/src/r_ipc/r_ipc.c
+Building file: ../ra/fsp/src/r_ioport/r_ioport.c
+Building file: ../ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_clocks.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_common.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_delay.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_group_irq.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_guard.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_io.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_ipc.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_irq.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_macl.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_register_protection.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_sbrk.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_ospi_b.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_sdram.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_security.c
+Building file: ../ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c
+Building file: ../ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c
+Building file: ../ra/board/ra8p1_ek/board_init.c
+Building file: ../ra/board/ra8p1_ek/board_leds.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtm/evk_xmc7200/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtk/cpu/xmc7200/int_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtk/cpu/xmc7200/ptimer_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtk/cpu/core/armv7m/int_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtk/cpu/core/armv7m/wusec_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_i2c/sysdepend/xmc7200/i2c_hal_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_i2c/sysdepend/xmc7200/i2c_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_i2c/hal_i2c.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_adc/sysdepend/xmc7200/adc_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_adc/sysdepend/xmc7200/adc_hal_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_adc/hal_adc.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/xmc7200/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/core/armv7m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/core/armv7m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/core/armv7m/exc_hdr.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/core/armv7m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/devinit.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/hw_setting.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/power_save.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32l4r5/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32l476/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32h723/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32h533/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32g491/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32g431/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32f767/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32f446/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32f411/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32f401/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/discovery_stm32n657/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32n6/int_stm32n6.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32n6/ptimer_stm32n6.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32l4/int_stm32l4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32l4/ptimer_stm32l4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32h7/int_stm32h7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32h7/ptimer_stm32h7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32h5/int_stm32h5.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32h5/ptimer_stm32h5.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32g4/int_stm32g4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32g4/ptimer_stm32g4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32f7/int_stm32f7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32f7/ptimer_stm32f7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32f4/int_stm32f4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32f4/ptimer_stm32f4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/core/armv8m/int_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/core/armv8m/wusec_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/core/armv7m/int_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/core/armv7m/wusec_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/ptimer_stm32.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_i2c/hal_i2c.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32f4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32f7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32g4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32h5.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32h7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32l4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32n6.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/hal_adc.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/cache.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/exc_hdr.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv7m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv7m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv7m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv7m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/devinit.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/hw_setting.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/power_save.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/fpb_ra4e1/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/ek_ra8m1/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/ek_ra8d1/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/ek_ra6m3/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/clicker_ra4m1/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/arduino_unor4/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/wusec_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv7m/int_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv7m/wusec_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_sci_i2c/hal_sci_i2c.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_i3c_i2c/hal_i3c_i2c.c
+../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c: In function 'SetCpuIntLevel':
+../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c:72:31: warning: conversion to 'UW' {aka 'long unsigned int'} from 'int' may change the sign of the result [-Wsign-conversion]
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_i2c/hal_i2c.c
+   72 |         set_basepri((level+1) << (8-INTPRI_BITWIDTH));
+      |                     ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c: In function 'EndOfInt':
+../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c:148:27: warning: unused parameter 'intno' [-Wunused-parameter]
+  148 | EXPORT void EndOfInt(UINT intno)
+      |                      ~~~~~^~~~~
+../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c: In function 'SetIntMode':
+../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c:171:29: warning: unused parameter 'intno' [-Wunused-parameter]
+  171 | EXPORT void SetIntMode(UINT intno, UINT mode)
+      |                        ~~~~~^~~~~
+../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c:171:41: warning: unused parameter 'mode' [-Wunused-parameter]
+  171 | EXPORT void SetIntMode(UINT intno, UINT mode)
+      |                                    ~~~~~^~~~
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_adhb/hal_adhb.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_adc/hal_adc.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cache.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/exc_hdr.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv7m/cpu_cntl.c
+In file included from ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:23:
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h: In function 'knl_setup_context':
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:85:42: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   85 |         tcb->tskctxb.spsa = tcb->isstack - tcb->sstksz;
+      |                                          ^
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:86:42: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   86 |         tcb->tskctxb.spea = tcb->isstack + sizeof(UW) - 1;
+      |                                          ^
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:86:55: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   86 |         tcb->tskctxb.spea = tcb->isstack + sizeof(UW) - 1;
+      |                                                       ^
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h: In function 'knl_setup_stacd':
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:104:21: warning: conversion to 'UW' {aka 'long unsigned int'} from 'INT' {aka 'int'} may change the sign of the result [-Wsign-conversion]
+  104 |         ssp->r[0] = stacd;
+      |                     ^~~~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:105:21: warning: conversion to 'UW' {aka 'long unsigned int'} from 'long int' may change the sign of the result [-Wsign-conversion]
+  105 |         ssp->r[1] = (VW)tcb->exinf;
+      |                     ^
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c: In function 'knl_set_reg':
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:59:37: warning: conversion to 'UW' {aka 'long unsigned int'} from 'VW' {aka 'long int'} may change the sign of the result [-Wsign-conversion]
+   59 |                         ssp->r[i] = regs->r[i];
+      |                                     ^~~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:62:42: warning: conversion to 'UW' {aka 'long unsigned int'} from 'VW' {aka 'long int'} may change the sign of the result [-Wsign-conversion]
+   62 |                         ssp->r_[i - 4] = regs->r[i];
+      |                                          ^~~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c: In function 'knl_get_reg':
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:104:38: warning: conversion to 'VW' {aka 'long int'} from 'UW' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+  104 |                         regs->r[i] = ssp->r[i];
+      |                                      ^~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:107:38: warning: conversion to 'VW' {aka 'long int'} from 'UW' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+  107 |                         regs->r[i] = ssp->r_[i - 4];
+      |                                      ^~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:109:31: warning: conversion to 'VW' {aka 'long int'} from 'UW' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+  109 |                 regs->r[12] = ssp->ip;
+      |                               ^~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c: In function 'knl_set_cpr':
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:141:29: warning: conversion to 'UW' {aka 'long unsigned int'} from 'VW' {aka 'long int'} may change the sign of the result [-Wsign-conversion]
+  141 |                 ssp->s[i] = copregs->s[i];
+      |                             ^~~~~~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:142:30: warning: conversion to 'UW' {aka 'long unsigned int'} from 'VW' {aka 'long int'} may change the sign of the result [-Wsign-conversion]
+  142 |                 ssp->s_[i] = copregs->s[i + 16];
+      |                              ^~~~~~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:129:38: warning: unused parameter 'copno' [-Wunused-parameter]
+  129 | EXPORT ER knl_set_cpr( TCB *tcb, INT copno, CONST T_COPREGS *copregs)
+      |                                  ~~~~^~~~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c: In function 'knl_get_cpr':
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:168:33: warning: conversion to 'VW' {aka 'long int'} from 'UW' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+  168 |                 copregs->s[i] = ssp->s[i];
+      |                                 ^~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:169:38: warning: conversion to 'VW' {aka 'long int'} from 'UW' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+  169 |                 copregs->s[i + 16] = ssp->s_[i];
+      |                                      ^~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c:156:38: warning: unused parameter 'copno' [-Wunused-parameter]
+  156 | EXPORT ER knl_get_cpr( TCB *tcb, INT copno, T_COPREGS *copregs)
+      |                                  ~~~~^~~~~
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv7m/dispatch.S
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/exc_hdr.c:119:23: warning: no previous declaration for 'knl_default_handler' [-Wmissing-declarations]
+  119 | WEAK_FUNC EXPORT void knl_default_handler(void)
+      |                       ^~~~~~~~~~~~~~~~~~~
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv7m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv7m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/hw_setting.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/lib/libtm/frdm_mcxn947/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/devinit.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/power_save.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/lib/libtm/evk_lpc55s69/tm_com.c
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/interrupt.c:33:13: warning: no previous declaration for 'knl_hll_inthdr' [-Wmissing-declarations]
+   33 | EXPORT void knl_hll_inthdr(void)
+      |             ^~~~~~~~~~~~~~
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/lib/libtk/cpu/core/armv8m/int_armv8m.c
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/sys_start.c:49:13: warning: no previous declaration for 'knl_start_mtkernel' [-Wmissing-declarations]
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/lib/libtk/cpu/core/armv8m/wusec_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/device/hal_lpi2c/hal_lpi2c.c
+   49 | EXPORT void knl_start_mtkernel(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/sys_start.c: In function 'knl_start_mtkernel':
+../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/sys_start.c:80:20: warning: unsigned conversion from 'int' to 'long unsigned int' changes value from '-769' to '4294966527' [-Wsign-conversion]
+   80 |         reg = (reg & (~AIRCR_PRIGROUP3)) | AIRCR_PRIGROUP0;     // PRIGRP:SUBPRI = 4 : 4
+      |                    ^
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/device/hal_adc/hal_adc.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/cpu/core/armv8m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/cpu/core/armv8m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/cpu/core/armv8m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/cpu/core/armv8m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/devinit.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/power_save.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/no_device/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/iote_stm32l4/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/iote_rza2m/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/iote_rx231/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/iote_m367/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/libtm.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/tx03_m367/int_m367.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/tx03_m367/ptimer_m367.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/stm32l4/int_stm32l4.c
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c: In function 'tm_getchar':
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c:37:28: warning: unused parameter 'wait' [-Wunused-parameter]
+   37 | EXPORT INT tm_getchar( INT wait )
+      |                        ~~~~^~~~
+In file included from [REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/sysdepend/ra_fsp/syslib.h:27,
+                 from [REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/syslib.h:35,
+                 from [REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/mtkernel/include/tk/tkernel.h:48,
+                 from [REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/tkernel.h:23,
+                 from ../mtk3_bsp2/mtkernel/lib/libtm/libtm.c:18:
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c: In function 'tm_getline':
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/sysdepend/ra_fsp/cpu/core/armv8m/syslib.h:40:46: warning: conversion to 'INT' {aka 'int'} from 'UW' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+   40 | #define DI(intsts)              ( (intsts) = disint() )
+      |                                              ^~~~~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c:60:9: note: in expansion of macro 'DI'
+   60 |         DI(imask);
+      |         ^~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c:74:12: warning: conversion to 'UW' {aka 'long unsigned int'} from 'INT' {aka 'int'} may change the sign of the result [-Wsign-conversion]
+   74 |         EI(imask);
+      |            ^~~~~
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/sysdepend/ra_fsp/cpu/core/armv8m/syslib.h:41:47: note: in definition of macro 'EI'
+   41 | #define EI(intsts)              ( set_basepri(intsts) )
+      |                                               ^~~~~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c: In function 'tm_putchar':
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/sysdepend/ra_fsp/cpu/core/armv8m/syslib.h:40:46: warning: conversion to 'INT' {aka 'int'} from 'UW' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+   40 | #define DI(intsts)              ( (intsts) = disint() )
+      |                                              ^~~~~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c:89:9: note: in expansion of macro 'DI'
+   89 |         DI(imask);
+      |         ^~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c:94:12: warning: conversion to 'UW' {aka 'long unsigned int'} from 'INT' {aka 'int'} may change the sign of the result [-Wsign-conversion]
+   94 |         EI(imask);
+      |            ^~~~~
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/sysdepend/ra_fsp/cpu/core/armv8m/syslib.h:41:47: note: in definition of macro 'EI'
+   41 | #define EI(intsts)              ( set_basepri(intsts) )
+      |                                               ^~~~~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c: In function 'tm_putstring':
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/sysdepend/ra_fsp/cpu/core/armv8m/syslib.h:40:46: warning: conversion to 'INT' {aka 'int'} from 'UW' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+   40 | #define DI(intsts)              ( (intsts) = disint() )
+      |                                              ^~~~~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c:108:9: note: in expansion of macro 'DI'
+  108 |         DI(imask);
+      |         ^~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm.c:112:12: warning: conversion to 'UW' {aka 'long unsigned int'} from 'INT' {aka 'int'} may change the sign of the result [-Wsign-conversion]
+  112 |         EI(imask);
+      |            ^~~~~
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/include/tk/sysdepend/ra_fsp/cpu/core/armv8m/syslib.h:41:47: note: in definition of macro 'EI'
+   41 | #define EI(intsts)              ( set_basepri(intsts) )
+      |                                               ^~~~~~
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/stm32l4/ptimer_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/stm32h7/int_stm32h7.c
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c: In function 'tm_vsprintf':
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:106:31: warning: conversion from 'INT' {aka 'int'} to 'H' {aka 'short int'} may change value [-Wconversion]
+  106 |                         wid = va_arg(ap, INT);
+      |                               ^~~~~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:114:39: warning: conversion from 'int' to 'H' {aka 'short int'} may change value [-Wconversion]
+  114 |                                 wid = wid * 10 + c - '0';
+      |                                       ^~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:122:40: warning: conversion from 'INT' {aka 'int'} to 'H' {aka 'short int'} may change value [-Wconversion]
+  122 |                                 prec = va_arg(ap, INT);
+      |                                        ^~~~~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:127:48: warning: conversion from 'int' to 'H' {aka 'short int'} may change value [-Wconversion]
+  127 |                                         prec = prec * 10 + c - '0';
+      |                                                ^~~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:129:32: warning: unsigned conversion from 'int' to 'UB' {aka 'unsigned char'} changes the value of '-17' [-Wsign-conversion]
+  129 |                         flg &= ~F_ZERO;         /* No ZERO padding */
+      |                                ^
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:156:45: warning: conversion to 'UW' {aka 'long unsigned int'} from 'int' may change the sign of the result [-Wsign-conversion]
+  156 |                                         v = (c == 'i' || c == 'd') ?
+      |                                             ^
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:164:45: warning: conversion to 'UW' {aka 'long unsigned int'} from 'long int' may change the sign of the result [-Wsign-conversion]
+  164 |                                         v = - (W)v;
+      |                                             ^
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:183:48: warning: conversion from 'int' to 'H' {aka 'short int'} may change value [-Wconversion]
+  183 |                                         wid -= (base == 8) ? 1 : 2;
+      |                                                ^
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:222:21: warning: conversion from 'int' to 'H' {aka 'short int'} may change value [-Wconversion]
+  222 |                 n = cbe - cbs;                          /* item length */
+      |                     ^~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c: In function 'out_cons':
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:277:21: warning: conversion from 'INT' {aka 'int'} to 'H' {aka 'short int'} may change value [-Wconversion]
+  277 |         par->len += len;
+      |                     ^~~
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c: In function 'out_buf':
+../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c:330:21: warning: conversion from 'INT' {aka 'int'} to 'H' {aka 'short int'} may change value [-Wconversion]
+  330 |         par->len += len;
+      |                     ^~~
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/stm32h7/ptimer_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rza2m/ptimer_rza2m.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx65n/int_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx65n/ipr_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx65n/ptimer_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx231/int_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx231/ipr_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx231/ptimer_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/rxv2/int_rxv2.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/rxv2/wusec_rvx2.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/armv7m/int_armv7m.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/armv7m/wusec_armv7m.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/armv7a/int_armv7a.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/armv7a/wusec_armv7a.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/fastlock.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/fastmlock.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/usermain/usermain.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tstdlib/bitop.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tstdlib/string.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/cpuctl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/device.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c
+../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c: In function 'Kmalloc':
+../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c:41:28: warning: conversion to 'SZ' {aka 'long int'} from 'size_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+   41 |         return knl_Imalloc(size);
+      |                            ^~~~
+../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c: In function 'Kcalloc':
+../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c:46:28: warning: conversion to 'SZ' {aka 'long int'} from 'size_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+   46 |         return knl_Icalloc(nmemb, size);
+      |                            ^~~~~
+../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c:46:35: warning: conversion to 'SZ' {aka 'long int'} from 'size_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+   46 |         return knl_Icalloc(nmemb, size);
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/eventflag.c
+      |                                   ^~~~
+../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c: In function 'Krealloc':
+../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c:51:34: warning: conversion to 'SZ' {aka 'long int'} from 'size_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+   51 |         return knl_Irealloc(ptr, size);
+      |                                  ^~~~
+../mtk3_bsp2/mtkernel/kernel/usermain/usermain.c:30:25: warning: no previous declaration for 'usermain' [-Wmissing-declarations]
+   30 | WEAK_FUNC EXPORT INT    usermain( void )
+      |                         ^~~~~~~~
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/int.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/klock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/mailbox.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/memory.c
+In file included from ../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:21:
+../mtk3_bsp2/mtkernel/kernel/tkernel/device.h: In function 'knl_call_abortfn':
+In file included from ../mtk3_bsp2/mtkernel/kernel/tkernel/device.c:21:
+../mtk3_bsp2/mtkernel/kernel/tkernel/device.h: In function 'knl_call_abortfn':
+../mtk3_bsp2/mtkernel/kernel/tkernel/device.h:88:19: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'ER (*)(ID,  T_DEVREQ *, INT,  void *)' {aka 'int (*)(int,  struct t_devreq *, int,  void *)'} [-Wcast-function-type]
+   88 |         abortfn = (ABTFN)devcb->ddev.abortfn;
+      |                   ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/device.h:88:19: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'ER (*)(ID,  T_DEVREQ *, INT,  void *)' {aka 'int (*)(int,  struct t_devreq *, int,  void *)'} [-Wcast-function-type]
+   88 |         abortfn = (ABTFN)devcb->ddev.abortfn;
+      |                   ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/device.c: In function 'tk_evt_dev':
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c: In function 'tk_opn_dev':
+../mtk3_bsp2/mtkernel/kernel/tkernel/device.c:428:19: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'INT (*)(INT,  void *, void *)' {aka 'int (*)(int,  void *, void *)'} [-Wcast-function-type]
+  428 |         eventfn = (EVTFN)devcb->ddev.eventfn;
+      |                   ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:247:18: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'ER (*)(ID,  UINT,  void *)' {aka 'int (*)(int,  unsigned int,  void *)'} [-Wcast-function-type]
+  247 |         openfn = (OPNFN)devcb->ddev.openfn;
+      |                  ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/eventflag.c: In function 'flg_chg_pri':
+../mtk3_bsp2/mtkernel/kernel/tkernel/eventflag.c:214:39: warning: unused parameter 'oldpri' [-Wunused-parameter]
+  214 | LOCAL void flg_chg_pri( TCB *tcb, INT oldpri )
+      |                                   ~~~~^~~~~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c: In function 'abort_allrequest':
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:319:19: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'ER (*)(ID,  T_DEVREQ *, INT,  void *)' {aka 'int (*)(int,  struct t_devreq *, int,  void *)'} [-Wcast-function-type]
+  319 |         abortfn = (ABTFN)devcb->ddev.abortfn;
+      |                   ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:320:19: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'INT (*)(T_DEVREQ *, INT,  TMO,  void *)' {aka 'int (*)(struct t_devreq *, int,  long int,  void *)'} [-Wcast-function-type]
+  320 |         waitfn  = (WAIFN)devcb->ddev.waitfn;
+      |                   ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c: In function 'knl_close_device':
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:415:19: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'ER (*)(ID,  UINT,  void *)' {aka 'int (*)(int,  unsigned int,  void *)'} [-Wcast-function-type]
+  415 |         closefn = (CLSFN)devcb->ddev.closefn;
+      |                   ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c: In function 'knl_request':
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:530:18: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'ER (*)(T_DEVREQ *, TMO,  void *)' {aka 'int (*)(struct t_devreq *, long int,  void *)'} [-Wcast-function-type]
+  530 |         execfn = (EXCFN)devcb->ddev.execfn;
+      |                  ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:544:29: warning: conversion from 'INT' {aka 'int'} to 'signed char:4' may change value [-Wconversion]
+  544 |         reqcb->req.cmd    = cmd;
+      |                             ^~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c: In function 'tk_wai_dev':
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:705:18: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'INT (*)(T_DEVREQ *, INT,  TMO,  void *)' {aka 'int (*)(struct t_devreq *, int,  long int,  void *)'} [-Wcast-function-type]
+  705 |         waitfn = (WAIFN)devcb->ddev.waitfn;
+      |                  ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c: In function 'sendevt_alldevice':
+../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c:843:27: warning: cast between incompatible function types from 'FP' {aka 'void (*)()'} to 'INT (*)(INT,  void *, void *)' {aka 'int (*)(int,  void *, void *)'} [-Wcast-function-type]
+  843 |                 eventfn = (EVTFN)devcb->ddev.eventfn;
+      |                           ^
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/mempfix.c
+../mtk3_bsp2/mtkernel/kernel/tkernel/int.c: In function 'tk_def_int':
+../mtk3_bsp2/mtkernel/kernel/tkernel/int.c:46:34: warning: conversion to 'INT' {aka 'int'} from 'UINT' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+   46 |         ercd = knl_define_inthdr(intno, intatr, inthdr);
+      |                                  ^~~~~
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/misc_calls.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/mutex.c
+../mtk3_bsp2/mtkernel/kernel/tkernel/klock.c: In function 'knl_LockOBJ':
+../mtk3_bsp2/mtkernel/kernel/tkernel/klock.c:39:47: warning: conversion from 'BOOL' {aka 'unsigned int'} to 'unsigned char:1' may change value [-Wconversion]
+   39 |                         knl_ctxtsk->klocked = klocked = TRUE;
+      |                                               ^~~~~~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/memory.c: In function 'knl_Imalloc':
+../mtk3_bsp2/mtkernel/kernel/tkernel/memory.c:169:27: warning: comparison of integer expressions of different signedness: 'SZ' {aka 'long int'} and 'unsigned int' [-Wsign-compare]
+  169 |         } else  if ( size < MIN_FRAGMENT ) {
+      |                           ^
+In file included from ../mtk3_bsp2/mtkernel/kernel/tkernel/memory.c:20:
+../mtk3_bsp2/mtkernel/kernel/tkernel/memory.h:54:25: warning: conversion to 'SZ' {aka 'long int'} from 'long unsigned int' may change the sign of the result [-Wsign-conversion]
+   54 | #define ROUND(sz)       ( ((UW)(sz) + (UW)(ROUNDSZ-1)) & ~(UW)(ROUNDSZ-1) )
+      |                         ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/memory.c:172:24: note: in expansion of macro 'ROUND'
+  172 |                 size = ROUND(size);
+      |                        ^~~~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/mailbox.c: In function 'mbx_chg_pri':
+../mtk3_bsp2/mtkernel/kernel/tkernel/memory.c:191:33: warning: comparison of integer expressions of different signedness: 'long int' and 'unsigned int' [-Wsign-compare]
+  191 |         if ( FreeSize(q) - size >= MIN_FRAGMENT + sizeof(QUEUE) ) {
+      |                                 ^~
+../mtk3_bsp2/mtkernel/kernel/tkernel/mailbox.c:189:39: warning: unused parameter 'oldpri' [-Wunused-parameter]
+  189 | LOCAL void mbx_chg_pri( TCB *tcb, INT oldpri )
+      |                                   ~~~~^~~~~~
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/objname.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/power.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/rendezvous.c
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempfix.c: In function 'tk_cre_mpf':
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempfix.c:98:39: warning: conversion to 'SZ' {aka 'long int'} from 'long unsigned int' may change the sign of the result [-Wsign-conversion]
+   98 |                 mempool = knl_Imalloc((UW)mpfsz);
+      |                                       ^~~~~~~~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempfix.c: In function 'knl_mpf_chg_pri':
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempfix.c:197:43: warning: unused parameter 'oldpri' [-Wunused-parameter]
+  197 | LOCAL void knl_mpf_chg_pri( TCB *tcb, INT oldpri )
+      |                                       ~~~~^~~~~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c: In function 'knl_get_blk':
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c:128:26: warning: conversion to 'long unsigned int' from 'long int' may change the sign of the result [-Wsign-conversion]
+  128 |         if ( FreeSize(q) - (UW)blksz >= MIN_FRAGMENT + sizeof(QUEUE) ) {
+      |                          ^
+In file included from ../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c:21:
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c: In function 'tk_cre_mpl':
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c:259:56: warning: comparison of integer expressions of different signedness: 'SZ' {aka 'long int'} and 'long unsigned int' [-Wsign-compare]
+  259 |         CHECK_PAR(pk_cmpl->mplsz > 0 && pk_cmpl->mplsz <= MAX_ALLOCATE);
+      |                                                        ^~
+../mtk3_bsp2/mtkernel/kernel/tkernel/check.h:168:15: note: in definition of macro 'CHECK_PAR'
+  168 |         if (!(exp)) {                                           \
+      |               ^~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c:279:39: warning: conversion to 'SZ' {aka 'long int'} from 'long unsigned int' may change the sign of the result [-Wsign-conversion]
+  279 |                 mempool = knl_Imalloc((UW)mplsz);
+      |                                       ^~~~~~~~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c: In function 'tk_get_mpl':
+../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c:417:38: warning: comparison of integer expressions of different signedness: 'SZ' {aka 'long int'} and 'long unsigned int' [-Wsign-compare]
+  417 |         CHECK_PAR(blksz > 0 && blksz <= MAX_ALLOCATE);
+      |                                      ^~
+../mtk3_bsp2/mtkernel/kernel/tkernel/check.h:168:15: note: in definition of macro 'CHECK_PAR'
+  168 |         if (!(exp)) {                                           \
+      |               ^~~
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/semaphore.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/task.c
+../mtk3_bsp2/mtkernel/kernel/tkernel/mutex.c: In function 'tk_cre_mtx':
+../mtk3_bsp2/mtkernel/kernel/tkernel/mutex.c:248:34: warning: conversion from 'INT' {aka 'int'} to 'UB' {aka 'unsigned char'} may change value [-Wconversion]
+  248 |                 mtxcb->ceilpri = ceilpri;
+      |                                  ^~~~~~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.c: In function 'knl_msg_to_mbf':
+../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.c:68:14: warning: conversion to 'long unsigned int' from 'W' {aka 'long int'} may change the sign of the result [-Wsign-conversion]
+   68 |         tail += HEADERSZ;
+      |              ^~
+In file included from ../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.c:22:
+../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.h:59:25: warning: conversion to 'W' {aka 'long int'} from 'long unsigned int' may change the sign of the result [-Wsign-conversion]
+   59 | #define HEADERSZ        (sizeof(HEADER))
+      |                         ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.c:68:17: note: in expansion of macro 'HEADERSZ'
+   68 |         tail += HEADERSZ;
+      |                 ^~~~~~~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.c: In function 'tk_cre_mbf':
+../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.c:153:46: warning: conversion to 'SZ' {aka 'long int'} from 'long unsigned int' may change the sign of the result [-Wsign-conversion]
+  153 |                         msgbuf = knl_Imalloc((UW)bufsz);
+      |                                              ^~~~~~~~~
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/task_manage.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/task_sync.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/time_calls.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/timer.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/tkinit.c
+In file included from [REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu_task.h:26,
+                 from ../mtk3_bsp2/mtkernel/kernel/tkernel/../sysdepend/cpu_task.h:26,
+                 from ../mtk3_bsp2/mtkernel/kernel/tkernel/task.c:25:
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h: In function 'knl_setup_context':
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:85:42: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   85 |         tcb->tskctxb.spsa = tcb->isstack - tcb->sstksz;
+      |                                          ^
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:86:42: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   86 |         tcb->tskctxb.spea = tcb->isstack + sizeof(UW) - 1;
+      |                                          ^
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:86:55: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   86 |         tcb->tskctxb.spea = tcb->isstack + sizeof(UW) - 1;
+      |                                                       ^
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h: In function 'knl_setup_stacd':
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:104:21: warning: conversion to 'UW' {aka 'long unsigned int'} from 'INT' {aka 'int'} may change the sign of the result [-Wsign-conversion]
+  104 |         ssp->r[0] = stacd;
+      |                     ^~~~~
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:105:21: warning: conversion to 'UW' {aka 'long unsigned int'} from 'long int' may change the sign of the result [-Wsign-conversion]
+  105 |         ssp->r[1] = (VW)tcb->exinf;
+      |                     ^
+In file included from [REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu_task.h:26,
+                 from ../mtk3_bsp2/mtkernel/kernel/tkernel/../sysdepend/cpu_task.h:26,
+                 from ../mtk3_bsp2/mtkernel/kernel/tkernel/task_manage.c:24:
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h: In function 'knl_setup_context':
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:85:42: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   85 |         tcb->tskctxb.spsa = tcb->isstack - tcb->sstksz;
+      |                                          ^
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:86:42: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   86 |         tcb->tskctxb.spea = tcb->isstack + sizeof(UW) - 1;
+      |                                          ^
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:86:55: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+   86 |         tcb->tskctxb.spea = tcb->isstack + sizeof(UW) - 1;
+      |                                                       ^
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h: In function 'knl_setup_stacd':
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:104:21: warning: conversion to 'UW' {aka 'long unsigned int'} from 'INT' {aka 'int'} may change the sign of the result [-Wsign-conversion]
+  104 |         ssp->r[0] = stacd;
+      |                     ^~~~~
+[REPO]/firmware/evaluations/mtkernel_test7_dualCoreIpc_CPU1/mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_task.h:105:21: warning: conversion to 'UW' {aka 'long unsigned int'} from 'long int' may change the sign of the result [-Wsign-conversion]
+  105 |         ssp->r[1] = (VW)tcb->exinf;
+      |                     ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/task_manage.c: In function 'tk_cre_tsk':
+../mtk3_bsp2/mtkernel/kernel/tkernel/task_manage.c:65:37: warning: conversion to 'SZ' {aka 'long int'} from 'long unsigned int' may change the sign of the result [-Wsign-conversion]
+   65 |                 stack = knl_Imalloc((UW)sstksz);
+      |                                     ^~~~~~~~~~
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/wait.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysinit/sysinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_stm32l4/cpu_clock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_stm32l4/devinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_stm32l4/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_stm32l4/power_save.c
+../mtk3_bsp2/mtkernel/kernel/tkernel/timer.c: In function 'knl_timer_insert':
+../mtk3_bsp2/mtkernel/kernel/tkernel/timer.c:107:56: warning: conversion to 'long unsigned int' from 'TMO' {aka 'long int'} may change the sign of the result [-Wsign-conversion]
+  107 |                 event->time = lltoul(knl_current_time) + tmout + TIMER_PERIOD;
+      |                                                        ^
+../mtk3_bsp2/mtkernel/kernel/tkernel/wait.c: In function 'knl_make_wait':
+../mtk3_bsp2/mtkernel/kernel/tkernel/wait.c:65:43: warning: unused parameter 'atr' [-Wunused-parameter]
+   65 | EXPORT void knl_make_wait( TMO tmout, ATR atr )
+      |                                       ~~~~^~~
+../mtk3_bsp2/mtkernel/kernel/tkernel/wait.c: In function 'knl_make_wait_reltim':
+../mtk3_bsp2/mtkernel/kernel/tkernel/wait.c:79:53: warning: unused parameter 'atr' [-Wunused-parameter]
+   79 | EXPORT void knl_make_wait_reltim( RELTIM tmout, ATR atr )
+      |                                                 ~~~~^~~
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rza2m/cpu_clock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rza2m/devinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rza2m/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rza2m/power_save.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rx231/cpu_clock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rx231/devinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rx231/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rx231/power_save.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_m367/cpu_clock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_m367/devinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_m367/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_m367/power_save.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/tx03_m367/vector_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/stm32l4/vector_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/stm32h7/vector_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rza2m/sf_boot.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rza2m/ttb_ini.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx65n/group_int.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx65n/hllint_ent.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx65n/hllint_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx65n/intvect_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx231/hllint_ent.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx231/hllint_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx231/intvect_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/cpu_cntl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/dispatch.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/exc_hdr.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/int_asm.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/interrupt.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/reset_hdl.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/reset_main.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/vector_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/cpu_cntl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/dispatch.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/exc_hdr.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/interrupt.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/reset_hdl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/cpu_cntl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/dispatch.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/exc_entry.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/exc_hdl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/int_asm.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/interrupt.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/reset_hdl.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/reset_main.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/vector_tbl.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/inittask/inittask.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/tx03_m367/ser_m367.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/stm32l4/ser_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/stm32h7/ser_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/rza2m/ser_rza2m.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/rx65n/ser_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/rx231/ser_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/ser.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/tx03_m367/i2c_m367.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/stm32l4/i2c_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/stm32h7/i2c_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/rza2m/i2c_rza2m.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/rx65n/i2c_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/rx231/i2c_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/i2c.c
+Building file: ../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/tx03_m367/adc_m367.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/stm32l4/adc_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/stm32h7/adc_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/rza2m/adc_rza2m.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/rx65n/adc_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/rx231/adc_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/adc.c
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c: In function 'msdi_execfn':
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:72:42: warning: unused parameter 'tmout' [-Wunused-parameter]
+   72 | LOCAL ER msdi_execfn( T_DEVREQ *req, TMO tmout, T_MSDI *msdi )
+      |                                      ~~~~^~~~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c: In function 'msdi_waitfn':
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:94:34: warning: unused parameter 'req' [-Wunused-parameter]
+   94 | LOCAL INT msdi_waitfn( T_DEVREQ *req, INT nreq, TMO tmout, T_MSDI *msdi )
+      |                        ~~~~~~~~~~^~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:94:43: warning: unused parameter 'nreq' [-Wunused-parameter]
+   94 | LOCAL INT msdi_waitfn( T_DEVREQ *req, INT nreq, TMO tmout, T_MSDI *msdi )
+      |                                       ~~~~^~~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:94:53: warning: unused parameter 'tmout' [-Wunused-parameter]
+   94 | LOCAL INT msdi_waitfn( T_DEVREQ *req, INT nreq, TMO tmout, T_MSDI *msdi )
+      |                                                 ~~~~^~~~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:94:68: warning: unused parameter 'msdi' [-Wunused-parameter]
+   94 | LOCAL INT msdi_waitfn( T_DEVREQ *req, INT nreq, TMO tmout, T_MSDI *msdi )
+      |                                                            ~~~~~~~~^~~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c: In function 'msdi_abortfn':
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:102:27: warning: unused parameter 'tskid' [-Wunused-parameter]
+  102 | LOCAL ER msdi_abortfn( ID tskid, T_DEVREQ *req, INT nreq, T_MSDI *msdi )
+      |                        ~~~^~~~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:102:44: warning: unused parameter 'req' [-Wunused-parameter]
+  102 | LOCAL ER msdi_abortfn( ID tskid, T_DEVREQ *req, INT nreq, T_MSDI *msdi )
+      |                                  ~~~~~~~~~~^~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:102:53: warning: unused parameter 'nreq' [-Wunused-parameter]
+  102 | LOCAL ER msdi_abortfn( ID tskid, T_DEVREQ *req, INT nreq, T_MSDI *msdi )
+      |                                                 ~~~~^~~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:102:67: warning: unused parameter 'msdi' [-Wunused-parameter]
+  102 | LOCAL ER msdi_abortfn( ID tskid, T_DEVREQ *req, INT nreq, T_MSDI *msdi )
+      |                                                           ~~~~~~~~^~~~
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c: In function 'msdi_def_dev':
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:156:24: warning: cast between incompatible function types from 'ER (*)(ID,  UINT,  T_MSDI *)' {aka 'int (*)(int,  unsigned int,  struct S_MSDI *)'} to 'void (*)()' [-Wcast-function-type]
+  156 |         ddev.openfn  = (FP)msdi_openfn;
+      |                        ^
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:157:24: warning: cast between incompatible function types from 'ER (*)(ID,  UINT,  T_MSDI *)' {aka 'int (*)(int,  unsigned int,  struct S_MSDI *)'} to 'void (*)()' [-Wcast-function-type]
+  157 |         ddev.closefn = (FP)msdi_closefn;
+      |                        ^
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:158:24: warning: cast between incompatible function types from 'ER (*)(T_DEVREQ *, TMO,  T_MSDI *)' {aka 'int (*)(struct t_devreq *, long int,  struct S_MSDI *)'} to 'void (*)()' [-Wcast-function-type]
+  158 |         ddev.execfn  = (FP)msdi_execfn;
+      |                        ^
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:159:24: warning: cast between incompatible function types from 'INT (*)(T_DEVREQ *, INT,  TMO,  T_MSDI *)' {aka 'int (*)(struct t_devreq *, int,  long int,  struct S_MSDI *)'} to 'void (*)()' [-Wcast-function-type]
+  159 |         ddev.waitfn  = (FP)msdi_waitfn;
+      |                        ^
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:160:24: warning: cast between incompatible function types from 'ER (*)(ID,  T_DEVREQ *, INT,  T_MSDI *)' {aka 'int (*)(int,  struct t_devreq *, int,  struct S_MSDI *)'} to 'void (*)()' [-Wcast-function-type]
+  160 |         ddev.abortfn = (FP)msdi_abortfn;
+      |                        ^
+../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c:161:24: warning: cast between incompatible function types from 'INT (*)(INT,  void *, T_MSDI *)' {aka 'int (*)(int,  void *, struct S_MSDI *)'} to 'void (*)()' [-Wcast-function-type]
+  161 |         ddev.eventfn = (FP)msdi_eventfn;
+      |                        ^
+Building file: ../Application/app_main.c
+Building file: ../Application/demo_console.c
+Building file: ../Application/gvd_log.c
+Building file: ../Application/gvd_output.c
+Building file: ../Application/gvd_phy_led.c
+Building file: ../Application/gvd_policy.c
+Building file: ../Application/ipc_test.c
+../Application/gvd_policy.c: In function 'gvd_decide':
+../Application/gvd_policy.c:5:16: warning: function returns an aggregate [-Waggregate-return]
+    5 | gvd_decision_t gvd_decide(const perception_snapshot_t *s,
+      |                ^~~~~~~~~~
+../Application/gvd_output.c: In function 'gvd_output_task_entry':
+../Application/gvd_output.c:189:35: warning: function call has aggregate value [-Waggregate-return]
+  189 |         gvd_decision_t decision = gvd_decide(input.seen ? &input.snapshot : NULL,
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  190 |                                             at - input.received_ms, input.valid);
+      |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Building target: mtkernel_test7_dualCoreIpc_CPU1.elf
+arm-none-eabi-objcopy -O srec "mtkernel_test7_dualCoreIpc_CPU1.elf"  "mtkernel_test7_dualCoreIpc_CPU1.srec"
+arm-none-eabi-size --format=berkeley "mtkernel_test7_dualCoreIpc_CPU1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  19844	     92	  13488	  33424	   8290	mtkernel_test7_dualCoreIpc_CPU1.elf
+
+19:01:16 Build Finished. 0 errors, 106 warnings. (took 49s.957ms)
+

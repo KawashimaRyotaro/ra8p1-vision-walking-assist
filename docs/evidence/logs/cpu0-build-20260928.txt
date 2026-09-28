@@ -1,0 +1,527 @@
+Extracting support files...
+18:58:42 **** プロジェクト mtkernel_test7_dualCoreIpc に対する構成 Debug の クリーンのみのビルド ****
+make -r -j22 clean 
+make: *** No rule to make target 'clean'.  Stop.
+"make -r -j22 clean" terminated with exit code 2. Build might be incomplete.
+
+18:58:43 Build Failed. 1 errors, 0 warnings. (took 943ms)
+
+Extracting support files...
+18:58:49 **** プロジェクト mtkernel_test7_dualCoreIpc に対する構成 Debug の ビルド ****
+make -r -j22 all 
+Building file: ../src/hal_entry.c
+Building file: ../src/hal_warmstart.c
+Building file: ../ra_gen/common_data.c
+Building file: ../ra_gen/hal_data.c
+Building file: ../ra_gen/main.c
+Building file: ../ra_gen/pin_data.c
+Building file: ../ra_gen/vector_data.c
+Building file: ../ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.c
+Building file: ../ra/npu/ethos-u-core-driver/src/ethosu_driver.c
+Building file: ../ra/npu/ethos-u-core-driver/src/ethosu_pmu.c
+Building file: ../ra/fsp/src/rm_freertos_plus_fat/ff_locking.c
+Building file: ../ra/fsp/src/rm_freertos_plus_fat/rm_freertos_plus_fat.c
+Building file: ../ra/fsp/src/rm_ethosu/rm_ethosu.c
+Building file: ../ra/fsp/src/rm_block_media_usb/rm_block_media_usb.c
+Building file: ../ra/fsp/src/r_vin/r_vin.c
+Building file: ../ra/fsp/src/r_usb_hmsc/src/r_usb_hmsc_driver.c
+Building file: ../ra/fsp/src/r_usb_hmsc/src/r_usb_hstorage_driver.c
+Building file: ../ra/fsp/src/r_usb_hmsc/r_usb_hmsc.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_creg_access.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_creg_abs.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_dma.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_hostelectrical.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_hreg_abs.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_hreg_access.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_mcu.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_preg_abs.c
+Building file: ../ra/fsp/src/r_usb_basic/src/hw/r_usb_preg_access.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_cdataio.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_clibusbip.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_cstd_rtos.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hbc.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hcontrolrw.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hdriver.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hhubsys.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hintfifo.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hinthandler_usbip0.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hinthandler_usbip1.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hlibusbip.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hmanager.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hscheduler.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hsignal.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_hstdfunction.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_pbc.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_pcontrolrw.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_pdriver.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_pintfifo.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_pinthandler_usbip0.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_plibusbip.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_psignal.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_pstdfunction.c
+Building file: ../ra/fsp/src/r_usb_basic/src/driver/r_usb_pstdrequest.c
+Building file: ../ra/fsp/src/r_usb_basic/r_usb_basic.c
+Building file: ../ra/fsp/src/r_ospi_b/r_ospi_b.c
+Building file: ../ra/fsp/src/r_mipi_phy/r_mipi_phy.c
+Building file: ../ra/fsp/src/r_mipi_csi/r_mipi_csi.c
+Building file: ../ra/fsp/src/r_ipc/r_ipc.c
+Building file: ../ra/fsp/src/r_ioport/r_ioport.c
+Building file: ../ra/fsp/src/r_iic_master/r_iic_master.c
+Building file: ../ra/fsp/src/r_gpt/r_gpt.c
+Building file: ../ra/fsp/src/r_glcdc/r_glcdc.c
+Building file: ../ra/fsp/src/r_dmac/r_dmac.c
+Building file: ../ra/fsp/src/r_adc_b/r_adc_b.c
+Building file: ../ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_clocks.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_common.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_delay.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_group_irq.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_guard.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_io.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_ipc.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_irq.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_macl.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_ospi_b.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_register_protection.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_sbrk.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_sdram.c
+Building file: ../ra/fsp/src/bsp/mcu/all/bsp_security.c
+Building file: ../ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c
+Building file: ../ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_crc.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_dir.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_error.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_fat.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_file.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_format.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_ioman.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_memory.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_stdio.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_string.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_sys.c
+Building file: ../ra/freertos/Lab-Project-FreeRTOS-FAT/ff_time.c
+Building file: ../ra/board/ra8p1_ek/board_init.c
+Building file: ../ra/board/ra8p1_ek/board_leds.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtm/evk_xmc7200/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtk/cpu/xmc7200/int_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtk/cpu/xmc7200/ptimer_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtk/cpu/core/armv7m/int_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/lib/libtk/cpu/core/armv7m/wusec_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_i2c/sysdepend/xmc7200/i2c_hal_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_i2c/sysdepend/xmc7200/i2c_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_i2c/hal_i2c.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_adc/sysdepend/xmc7200/adc_hal_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_adc/sysdepend/xmc7200/adc_xmc7200.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/device/hal_adc/hal_adc.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/xmc7200/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/core/armv7m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/core/armv7m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/core/armv7m/exc_hdr.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/cpu/core/armv7m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/devinit.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/hw_setting.c
+Building file: ../mtk3_bsp2/sysdepend/xmc_mtb/power_save.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32l4r5/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32l476/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32h723/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32h533/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32g491/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32g431/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32f767/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32f446/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32f411/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/nucleo_stm32f401/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtm/discovery_stm32n657/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32n6/int_stm32n6.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32n6/ptimer_stm32n6.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32l4/int_stm32l4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32l4/ptimer_stm32l4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32h7/int_stm32h7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32h7/ptimer_stm32h7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32h5/int_stm32h5.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32h5/ptimer_stm32h5.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32g4/int_stm32g4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32g4/ptimer_stm32g4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32f7/int_stm32f7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32f7/ptimer_stm32f7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32f4/int_stm32f4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/stm32f4/ptimer_stm32f4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/core/armv8m/int_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/core/armv8m/wusec_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/core/armv7m/int_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/cpu/core/armv7m/wusec_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/lib/libtk/ptimer_stm32.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_i2c/hal_i2c.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32f4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32f7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32g4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32h5.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32h7.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32l4.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/sysdepend/hal_adc_stm32n6.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/device/hal_adc/hal_adc.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/cache.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/exc_hdr.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv8m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv7m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv7m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv7m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/cpu/core/armv7m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/devinit.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/hw_setting.c
+Building file: ../mtk3_bsp2/sysdepend/stm32_cube/power_save.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/fpb_ra4e1/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/ek_ra8m1/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/ek_ra8d1/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/ek_ra6m3/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/clicker_ra4m1/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtm/arduino_unor4/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/int_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv8m/wusec_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv7m/int_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/lib/libtk/cpu/core/armv7m/wusec_armv7m.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_sci_i2c/hal_sci_i2c.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_i2c/hal_i2c.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_adhb/hal_adhb.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_i3c_i2c/hal_i3c_i2c.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/device/hal_adc/hal_adc.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cache.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/exc_hdr.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv8m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv7m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv7m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv7m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/cpu/core/armv7m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/devinit.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/hw_setting.c
+Building file: ../mtk3_bsp2/sysdepend/ra_fsp/power_save.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/lib/libtm/frdm_mcxn947/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/lib/libtm/evk_lpc55s69/tm_com.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/lib/libtk/cpu/core/armv8m/int_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/lib/libtk/cpu/core/armv8m/wusec_armv8m.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/device/hal_lpi2c/hal_lpi2c.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/device/hal_adc/hal_adc.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/cpu/core/armv8m/cpu_cntl.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/cpu/core/armv8m/dispatch.S
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/cpu/core/armv8m/interrupt.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/cpu/core/armv8m/sys_start.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/devinit.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/hw_setting.c
+Building file: ../mtk3_bsp2/sysdepend/nxp_mcux/power_save.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/no_device/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/iote_stm32l4/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/iote_rza2m/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/iote_rx231/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/sysdepend/iote_m367/tm_com.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/libtm.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtm/libtm_printf.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/tx03_m367/int_m367.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/tx03_m367/ptimer_m367.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/stm32l4/int_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/stm32l4/ptimer_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/stm32h7/int_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/stm32h7/ptimer_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rza2m/ptimer_rza2m.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx65n/int_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx65n/ipr_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx65n/ptimer_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx231/int_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx231/ipr_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/rx231/ptimer_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/rxv2/int_rxv2.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/rxv2/wusec_rvx2.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/armv7m/int_armv7m.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/armv7m/wusec_armv7m.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/armv7a/int_armv7a.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/sysdepend/cpu/core/armv7a/wusec_armv7a.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/fastlock.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/fastmlock.c
+Building file: ../mtk3_bsp2/mtkernel/lib/libtk/kmalloc.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/usermain/usermain.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tstdlib/bitop.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tstdlib/string.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/cpuctl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/device.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/deviceio.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/eventflag.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/int.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/klock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/mailbox.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/memory.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/mempfix.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/mempool.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/messagebuf.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/misc_calls.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/mutex.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/objname.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/power.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/rendezvous.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/semaphore.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/task.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/task_manage.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/task_sync.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/time_calls.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/timer.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/tkinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/tkernel/wait.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysinit/sysinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_stm32l4/cpu_clock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_stm32l4/devinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_stm32l4/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_stm32l4/power_save.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rza2m/cpu_clock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rza2m/devinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rza2m/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rza2m/power_save.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rx231/cpu_clock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rx231/devinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rx231/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_rx231/power_save.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_m367/cpu_clock.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_m367/devinit.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_m367/hw_setting.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/iote_m367/power_save.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/tx03_m367/vector_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/stm32l4/vector_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/stm32h7/vector_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rza2m/sf_boot.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rza2m/ttb_ini.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx65n/group_int.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx65n/hllint_ent.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx65n/hllint_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx65n/intvect_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx231/hllint_ent.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx231/hllint_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/rx231/intvect_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/cpu_cntl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/dispatch.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/exc_hdr.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/int_asm.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/interrupt.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/reset_hdl.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/reset_main.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/rxv2/vector_tbl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/cpu_cntl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/dispatch.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/exc_hdr.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/interrupt.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7m/reset_hdl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/cpu_cntl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/dispatch.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/exc_entry.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/exc_hdl.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/int_asm.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/interrupt.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/reset_hdl.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/reset_main.c
+Building file: ../mtk3_bsp2/mtkernel/kernel/sysdepend/cpu/core/armv7a/vector_tbl.S
+Building file: ../mtk3_bsp2/mtkernel/kernel/inittask/inittask.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/tx03_m367/ser_m367.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/stm32l4/ser_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/stm32h7/ser_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/rza2m/ser_rza2m.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/rx65n/ser_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/sysdepend/rx231/ser_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/device/ser/ser.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/tx03_m367/i2c_m367.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/stm32l4/i2c_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/stm32h7/i2c_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/rza2m/i2c_rza2m.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/rx65n/i2c_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/sysdepend/rx231/i2c_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/device/i2c/i2c.c
+Building file: ../mtk3_bsp2/mtkernel/device/common/drvif/msdrvif.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/tx03_m367/adc_m367.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/stm32l4/adc_stm32l4.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/stm32h7/adc_stm32h7.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/rza2m/adc_rza2m.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/rx65n/adc_rx65n.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/sysdepend/rx231/adc_rx231.c
+Building file: ../mtk3_bsp2/mtkernel/device/adc/adc.c
+Building file: ../Application/yolox_tiny/src_mcu_npu/compute_sub_0000.c
+Building file: ../Application/yolox_tiny/src_mcu_npu/compute_sub_0001.c
+Building file: ../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c
+Building file: ../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.c
+Building file: ../Application/yolox_tiny/src_mcu_npu/model.c
+Building file: ../Application/yolox_tiny/src_mcu_npu/sub_0002_command_stream.c
+Building file: ../Application/yolox_tiny/src_mcu_npu/sub_0002_invoke.c
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c: In function 'Mean':
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:625:42: warning: passing argument 2 of 'ReducedOutputOffset' from incompatible pointer type [-Wincompatible-pointer-types]
+  625 |         ReducedOutputOffset(in_num_dims, in_shape, temp_index, 0, NULL);
+      |                                          ^~~~~~~~
+      |                                          |
+      |                                          const int32_t * {aka const long int *}
+In file included from ../Application/yolox_tiny/src_mcu_npu/kernel_library_int.h:59,
+                 from ../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:50:
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:160:61: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  160 | uint32_t ReducedOutputOffset(const int num_dims, const int *dims, const int *index,
+      |                                                  ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:626:62: warning: passing argument 2 of 'ReducedOutputOffset' from incompatible pointer type [-Wincompatible-pointer-types]
+  626 |     int32_t output_offset = ReducedOutputOffset(in_num_dims, in_shape,
+      |                                                              ^~~~~~~~
+      |                                                              |
+      |                                                              const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:160:61: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  160 | uint32_t ReducedOutputOffset(const int num_dims, const int *dims, const int *index,
+      |                                                  ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:627:70: warning: passing argument 5 of 'ReducedOutputOffset' from incompatible pointer type [-Wincompatible-pointer-types]
+  627 |                                                temp_index, num_axis, axis);
+      |                                                                      ^~~~
+      |                                                                      |
+      |                                                                      const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:161:61: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  161 |                              const int num_axis, const int *axis);
+      |                                                  ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:629:35: warning: passing argument 2 of 'NextIndex' from incompatible pointer type [-Wincompatible-pointer-types]
+  629 |   } while (NextIndex(in_num_dims, in_shape, temp_index));
+      |                                   ^~~~~~~~
+      |                                   |
+      |                                   const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:162:47: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  162 | bool NextIndex(const int num_dims, const int *dims, int *current);
+      |                                    ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c: In function 'Sum':
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:667:33: warning: passing argument 2 of 'ResolveAxis' from incompatible pointer type [-Wincompatible-pointer-types]
+  667 |   if (!ResolveAxis(in_num_dims, axis, num_axis, resolved_axis,
+      |                                 ^~~~
+      |                                 |
+      |                                 const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:144:49: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  144 | bool ResolveAxis(const int num_dims, const int *axis, const int num_axis,
+      |                                      ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:667:49: warning: passing argument 4 of 'ResolveAxis' from incompatible pointer type [-Wincompatible-pointer-types]
+  667 |   if (!ResolveAxis(in_num_dims, axis, num_axis, resolved_axis,
+      |                                                 ^~~~~~~~~~~~~
+      |                                                 |
+      |                                                 int32_t * {aka long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:145:23: note: expected 'int *' but argument is of type 'int32_t *' {aka 'long int *'}
+  145 |                  int *out_axis, int *out_num_axis);
+      |                  ~~~~~^~~~~~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:668:21: warning: passing argument 5 of 'ResolveAxis' from incompatible pointer type [-Wincompatible-pointer-types]
+  668 |                     &num_resolved_axis)) {
+      |                     ^~~~~~~~~~~~~~~~~~
+      |                     |
+      |                     int32_t * {aka long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:145:38: note: expected 'int *' but argument is of type 'int32_t *' {aka 'long int *'}
+  145 |                  int *out_axis, int *out_num_axis);
+      |                                 ~~~~~^~~~~~~~~~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:675:42: warning: passing argument 2 of 'ReducedOutputOffset' from incompatible pointer type [-Wincompatible-pointer-types]
+  675 |         ReducedOutputOffset(in_num_dims, in_shape, temp_index, 0, NULL);
+      |                                          ^~~~~~~~
+      |                                          |
+      |                                          const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:160:61: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  160 | uint32_t ReducedOutputOffset(const int num_dims, const int *dims, const int *index,
+      |                                                  ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:676:63: warning: passing argument 2 of 'ReducedOutputOffset' from incompatible pointer type [-Wincompatible-pointer-types]
+  676 |     uint32_t output_offset = ReducedOutputOffset(in_num_dims, in_shape,
+      |                                                               ^~~~~~~~
+      |                                                               |
+      |                                                               const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:160:61: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  160 | uint32_t ReducedOutputOffset(const int num_dims, const int *dims, const int *index,
+      |                                                  ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:677:62: warning: passing argument 5 of 'ReducedOutputOffset' from incompatible pointer type [-Wincompatible-pointer-types]
+  677 |                               temp_index, num_resolved_axis, resolved_axis);
+      |                                                              ^~~~~~~~~~~~~
+      |                                                              |
+      |                                                              int32_t * {aka long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:161:61: note: expected 'const int *' but argument is of type 'int32_t *' {aka 'long int *'}
+  161 |                              const int num_axis, const int *axis);
+      |                                                  ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:679:35: warning: passing argument 2 of 'NextIndex' from incompatible pointer type [-Wincompatible-pointer-types]
+  679 |   } while (NextIndex(in_num_dims, in_shape, temp_index));
+      |                                   ^~~~~~~~
+      |                                   |
+      |                                   const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:162:47: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  162 | bool NextIndex(const int num_dims, const int *dims, int *current);
+      |                                    ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c: In function 'ReduceMax':
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:703:28: warning: passing argument 2 of 'ResolveAxis' from incompatible pointer type [-Wincompatible-pointer-types]
+  703 |   ResolveAxis(in_num_dims, axis, num_axis, resolved_axis, &num_resolved_axis);
+      |                            ^~~~
+      |                            |
+      |                            const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:144:49: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  144 | bool ResolveAxis(const int num_dims, const int *axis, const int num_axis,
+      |                                      ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:703:59: warning: passing argument 5 of 'ResolveAxis' from incompatible pointer type [-Wincompatible-pointer-types]
+  703 |   ResolveAxis(in_num_dims, axis, num_axis, resolved_axis, &num_resolved_axis);
+      |                                                           ^~~~~~~~~~~~~~~~~~
+      |                                                           |
+      |                                                           int32_t * {aka long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:145:38: note: expected 'int *' but argument is of type 'int32_t *' {aka 'long int *'}
+  145 |                  int *out_axis, int *out_num_axis);
+      |                                 ~~~~~^~~~~~~~~~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:712:42: warning: passing argument 2 of 'ReducedOutputOffset' from incompatible pointer type [-Wincompatible-pointer-types]
+  712 |         ReducedOutputOffset(in_num_dims, in_shape, temp_index, 0, NULL);
+      |                                          ^~~~~~~~
+      |                                          |
+      |                                          const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:160:61: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  160 | uint32_t ReducedOutputOffset(const int num_dims, const int *dims, const int *index,
+      |                                                  ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:713:62: warning: passing argument 2 of 'ReducedOutputOffset' from incompatible pointer type [-Wincompatible-pointer-types]
+  713 |     int32_t output_offset = ReducedOutputOffset(in_num_dims, in_shape,
+      |                                                              ^~~~~~~~
+      |                                                              |
+      |                                                              const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:160:61: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  160 | uint32_t ReducedOutputOffset(const int num_dims, const int *dims, const int *index,
+      |                                                  ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:716:35: warning: passing argument 2 of 'NextIndex' from incompatible pointer type [-Wincompatible-pointer-types]
+  716 |   } while (NextIndex(in_num_dims, in_shape, temp_index));
+      |                                   ^~~~~~~~
+      |                                   |
+      |                                   const int32_t * {aka const long int *}
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:162:47: note: expected 'const int *' but argument is of type 'const int32_t *' {aka 'const long int *'}
+  162 | bool NextIndex(const int num_dims, const int *dims, int *current);
+      |                                    ~~~~~~~~~~~^~~~
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c: In function 'MirrorPad':
+../Application/yolox_tiny/src_mcu_npu/kernel_library_int.c:1042:36: warning: passing argument 4 of 'GetFlatIndex' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1042 |       i, num_dims, padding_matrix, input_dims, output_dims_num_elements,
+      |                                    ^~~~~~~~~~
+      |                                    |
+      |                                    const int *
+../Application/yolox_tiny/src_mcu_npu/kernel_library_utils.h:205:33: note: expected 'const int32_t *' {aka 'const long int *'} but argument is of type 'const int *'
+  205 |                  const int32_t *input_dims,
+      |                  ~~~~~~~~~~~~~~~^~~~~~~~~~
+Building file: ../Application/yolox_tiny/src_mcu_npu/sub_0002_model_data.c
+Building file: ../Application/yolox_tiny/src_mcu_npu/sub_0002_tensors.c
+Building file: ../Application/yolox_tiny/postprocessing.c
+Building file: ../Application/yolox_tiny/preprocessing.c
+Building file: ../Application/app_main.c
+Building file: ../Application/benchmark_clock.c
+Building file: ../Application/camera_capture.c
+Building file: ../Application/camera_control.c
+Building file: ../Application/camera_sensor.c
+Building file: ../Application/demo_console.c
+Building file: ../Application/display_driver.c
+Building file: ../Application/display_task.c
+Building file: ../Application/fps_control.c
+Building file: ../Application/frame_difference.c
+Building file: ../Application/i2c_control.c
+Building file: ../Application/ipc_test.c
+Building file: ../Application/motion_block_match.c
+Building file: ../Application/motion_global.c
+Building file: ../Application/motion_preprocess.c
+Building file: ../Application/motion_task.c
+Building file: ../Application/npu_worker.c
+Building file: ../Application/switch_init.c
+Building file: ../Application/usb_loader.c
+Building file: ../Application/video_source.c
+Building target: mtkernel_test7_dualCoreIpc.elf
+arm-none-eabi-objcopy -O srec "mtkernel_test7_dualCoreIpc.elf"  "mtkernel_test7_dualCoreIpc.srec"
+arm-none-eabi-size --format=berkeley "mtkernel_test7_dualCoreIpc.elf"
+   text	   data	    bss	    dec	    hex	filename
+4798656	   1108	7000085	11799849	 b40d29	mtkernel_test7_dualCoreIpc.elf
+
+19:00:00 Build Finished. 0 errors, 17 warnings. (took 1m:11s.364ms)
+
